@@ -1,24 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: var(--fonte-padrao);
+}
+
+.d-flex {
+  height: 100%;
+}
+
 nav {
-    background-color: #333;
-    padding: 1em;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    display: inline;
-    margin-right: 1em;
-  }
-  
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+  background-color: var(--menu-color);
+  padding: 1em; 
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-family: var(--fonte-padrao);
+  text-align: center;
+}
+
+li {
+  margin: 1em 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 14%; 
+  background-color: var(--menu-color); 
+  color: var(--text-color);
+  overflow-x: hidden;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  padding-top: 60px; 
+  z-index: 999;
+  font-size: 1.5em;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 5px #d9b3ff, 0 0 10px #f2e6ff;
+
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.navbar {
+  background-color: var(--menu-color); /* Adjust to your color */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure navbar spans full width */
+  z-index: 1000; /* Ensure navbar is above other content */
+  padding: 1em;
+}
+
+.navbar-toggler, .navbar-toggler-icon {
+ border: none;
+}
+
+.navbar-toggler:hover {
+  transform: scale(1.1);
+  background: #333;
+}
+
+main {
+  margin-top: 60px; /* Adjust this value to the height of your navbar */
+  padding: 1em;
+  color: var(--text-color);
+  font-family: var(--fonte-padrao);
+}
