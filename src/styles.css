@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
     --background-color: #262626;
+    --cor-input: #404040;
+    --cor-botao: #8000ff;
     --text-color: #d9b3ff;
+    --text-sombra:  0 0 15px #d9b3ff, 0 0 20px #d9b3ff;
     --menu-color: #1a1a1a;
     --fonte-padrao: "Sofia", sans-serif;
   }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

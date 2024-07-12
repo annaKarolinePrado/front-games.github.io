@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        <p>Não tem uma conta? <a href="#" id="signup-link">Cadastrar</a></p>
+    </div>
+
+    <div class="signup-container" style="display: none;">
+        <h2>Cadastrar</h2>
+        <form id="signup-form">
+            <div class="input-group">
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="signup-password">Senha:</label>
+                <input type="password" id="signup-password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="signup-confirm-password">Confirmar Senha:</label>
+                <input type="password" id="signup-confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="#" id="login-link">Entrar</a></p>
+    </div>
+
+</body>
+</html>
