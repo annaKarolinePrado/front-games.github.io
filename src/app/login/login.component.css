@@ -1,15 +1,15 @@
-body {
+main {
     font-family: var(--fonte-padrao);
     color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
+    background-color: #0d0d0d;
+    width: 100%;
 }
 
-inputs {
+input {
     all: unset; /* Remova todas as propriedades aplicadas ao elemento */
     box-sizing: border-box; /* Ajusta o modelo da caixa */
     font-family: inherit; 
@@ -19,7 +19,7 @@ inputs {
     background-color: var(--background-color);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #f2e6ff(0, 0, 0, 0.1);
     width: 300px;
 }
 
@@ -32,9 +32,9 @@ h2 {
     margin-bottom: 15px;
 }
 
-#signup-email, #signup-password, #signup-confirm-password {
+#signup-email, #signup-password, #signup-confirm-password, #email, #password, #confirm-password {
     background-color: var(--cor-input);
-    text-shadow: 0 0 15px #d9b3ff, 0 0 20px #d9b3ff;
+    ;
     border: none;
     border-radius: 15px;
 }
@@ -54,7 +54,7 @@ button {
     width: 100%;
     padding: 10px;
     background-color: var(--cor-botao);
-    color: var(--text-color);
+    color: var(--text-color-botao);
     border: none;
     border-radius: 15px;
     cursor: pointer;
