@@ -1,42 +1,37 @@
-main {
-    font-family: var(--fonte-padrao);
-    color: var(--text-color);
+.container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #0d0d0d;
     width: 100%;
+    font-size: 1.4rem;
 }
-
-input {
-    all: unset; /* Remova todas as propriedades aplicadas ao elemento */
-    box-sizing: border-box; /* Ajusta o modelo da caixa */
-    font-family: inherit; 
-  }
 
 .login-container, .signup-container {
-    background-color: var(--background-color);
+    background-color: var(--menu-color);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #f2e6ff(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
 }
+.login-container p, .signup-container p {
+    margin-top: 4%;
+    font-size: 1.1rem;
+}
 
-h2 {
+h2, .input-group {
     margin-bottom: 20px;
     text-align: center;
 }
 
-.input-group {
-    margin-bottom: 15px;
-}
-
-#signup-email, #signup-password, #signup-confirm-password, #email, #password, #confirm-password {
+#signup-email, #signup-password, #signup-confirm-password, 
+#email, #password, #confirm-password {
+    color: var(--text-color);  
     background-color: var(--cor-input);
-    ;
     border: none;
+    outline: none;
     border-radius: 15px;
+    font-size: 1.3rem;
 }
 
 label {
@@ -44,10 +39,22 @@ label {
     margin-bottom: 5px;
 }
 
+#login-form input:focus {
+    box-shadow: 0 0 5px #8c1aff, 0 0 10px #8c1aff;
+    box-sizing: border-box;
+}
+
+#login-form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--cor-input) inset !important; /* Remove a sombra branca do autofill */
+    background-color: var(--cor-input) !important; /* Mantém o fundo personalizado */
+    color: var(--text-color) !important; /* Mantém a cor do texto personalizado */
+}
+
 input[type="email"], input[type="password"] {
     width: 100%;
-    padding: 8px;
+    padding: 5px;
     box-sizing: border-box;
+    color: var(--text-color);
 }
 
 button {
@@ -61,7 +68,8 @@ button {
 }
 
 button:hover {
-    background-color: var(--cor-botao);
+    background-color: #8c1aff;
+    transform: scale(1.04);
 }
 
 p {
@@ -74,5 +82,18 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-shadow: 0 0 5px #8c1aff, 0 0 10px #8c1aff;
+}
+
+@media (max-width: 768px) {
+    .login-container, .signup-container {
+        width: 100%;
+        margin: 0 20px;
+    }
+    .container {
+        font-size: 1.2rem;
+    }
+    .login-container p, .signup-container p {
+        font-size: 1.2rem;
+    }
 }
