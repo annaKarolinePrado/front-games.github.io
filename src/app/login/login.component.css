@@ -1,0 +1,105 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.4rem;
+    height: 70vb;
+}
+
+.login-container, .signup-container {
+    background-color: var(--menu-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.login-container p, .signup-container p {
+    margin-top: 4%;
+    font-size: 1.1rem;
+}
+
+h2, .input-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#signup-email, #signup-password, #signup-confirm-password, 
+#email, #password, #confirm-password {
+    color: var(--text-color);  
+    background-color: var(--cor-input);
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 1.3rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#login-form input:focus {
+    box-shadow: 0 0 5px #8c1aff, 0 0 10px #8c1aff;
+    box-sizing: border-box;
+}
+
+#login-form input:-webkit-autofill,
+#login-form input:-webkit-autofill  {
+    -webkit-box-shadow: 0 0 0 1000px var(--cor-input) inset !important;
+    background-color: var(--cor-input) !important; 
+    color: var(--text-color) !important; 
+    -webkit-text-fill-color: var(--text-color) !important; 
+    background-color: var(--cor-input) !important; 
+    border-color: transparent !important;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--cor-botao);
+    color: var(--text-color-botao);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8c1aff;
+    transform: scale(1.04);
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: var(--cor-botao);
+    text-decoration: none;
+}
+
+a:hover {
+    text-shadow: 0 0 5px #8c1aff, 0 0 10px #8c1aff;
+}
+
+@media (max-width: 768px) {
+    .login-container, .signup-container {
+        width: 100%;
+        margin: 0 20px;
+    }
+    .container {
+        font-size: 1.2rem;
+    }
+    .login-container p, .signup-container p {
+        font-size: 1.2rem;
+    }
+}
