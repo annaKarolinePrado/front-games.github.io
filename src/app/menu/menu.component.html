@@ -1,8 +1,6 @@
 <div class="d-flex">
   <nav class="navbar navbar-dark">
-    <button class="navbar-toggler" type="button" (click)="toggleMenu()">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <span (click)="toggleMenu()" class="icon"><i class="material-icons">home</i></span>
   </nav>
   <div class="sidebar" [class.open]="isMenuOpen">
     <ul class="navbar-nav">
