@@ -16,9 +16,10 @@ body, html, .d-flex {
 
 .icon {
   cursor: pointer;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
-.icon:hover {
+.icon:hover, .icon.open {
   transform: scale(1.1);
   text-shadow: 0 0 5px #d9b3ff;
 }
