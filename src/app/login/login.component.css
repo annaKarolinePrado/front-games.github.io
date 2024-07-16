@@ -5,6 +5,7 @@
     align-items: center;
     width: 100%;
     font-size: 1.4rem;
+    height: 70vb;
 }
 
 .login-container, .signup-container {
@@ -14,6 +15,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
 }
+
 .login-container p, .signup-container p {
     margin-top: 4%;
     font-size: 1.1rem;
@@ -44,10 +46,14 @@ label {
     box-sizing: border-box;
 }
 
-#login-form input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 1000px var(--cor-input) inset !important; /* Remove a sombra branca do autofill */
-    background-color: var(--cor-input) !important; /* Mantém o fundo personalizado */
-    color: var(--text-color) !important; /* Mantém a cor do texto personalizado */
+#login-form input:-webkit-autofill,
+#login-form input:-webkit-autofill  {
+    -webkit-box-shadow: 0 0 0 1000px var(--cor-input) inset !important;
+    background-color: var(--cor-input) !important; 
+    color: var(--text-color) !important; 
+    -webkit-text-fill-color: var(--text-color) !important; 
+    background-color: var(--cor-input) !important; 
+    border-color: transparent !important;
 }
 
 input[type="email"], input[type="password"] {
