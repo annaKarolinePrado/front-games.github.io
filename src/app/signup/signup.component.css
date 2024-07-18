@@ -91,6 +91,10 @@ a:hover {
     text-shadow: 0 0 5px #8c1aff, 0 0 10px #8c1aff;
 }
 
+.validacao {
+    font-size: 1rem;
+}
+
 @media (max-width: 768px) {
     .login-container, .signup-container {
         width: 100%;
