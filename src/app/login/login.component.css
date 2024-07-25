@@ -13,7 +13,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 350px;
 }
 
 .login-container p, .signup-container p {
@@ -27,7 +27,7 @@ h2, .input-group {
 }
 
 #signup-email, #signup-password, #signup-confirm-password, 
-#email, #password, #confirm-password {
+#login-email, #login-password {
     color: var(--text-color);  
     background-color: var(--cor-input);
     border: none;
@@ -56,7 +56,7 @@ label {
     border-color: transparent !important;
 }
 
-input[type="email"], input[type="password"] {
+input[type="login-email"], input[type="login-password"] {
     width: 100%;
     padding: 5px;
     box-sizing: border-box;
@@ -89,6 +89,10 @@ a {
 
 a:hover {
     text-shadow: 0 0 5px #8c1aff, 0 0 10px #8c1aff;
+}
+
+.validacao {
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {

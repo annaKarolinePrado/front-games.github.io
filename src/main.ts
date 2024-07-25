@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'sobre', component: AboutComponent },
   { path: 'contato', component: ContactComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'singup', component: SignupComponent }
+  { path: 'signup', component: SignupComponent },
 ];
 
 bootstrapApplication(AppComponent, {

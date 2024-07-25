@@ -13,7 +13,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 350px;
 }
 
 .login-container p, .signup-container p {
@@ -26,8 +26,7 @@ h2, .input-group {
     text-align: center;
 }
 
-#signup-email, #signup-password, #signup-confirm-password, 
-#email, #password, #confirm-password {
+#signup-email, #signup-password, #signup-confirm-password {
     color: var(--text-color);  
     background-color: var(--cor-input);
     border: none;
@@ -41,7 +40,7 @@ label {
     margin-bottom: 5px;
 }
 
-#login-form input:focus {
+#signup-form input:focus {
     box-shadow: 0 0 5px #8c1aff, 0 0 10px #8c1aff;
     box-sizing: border-box;
 }
@@ -93,6 +92,10 @@ a:hover {
 
 .validacao {
     font-size: 1rem;
+    height: 30px;
+}
+.validacao span{
+    font-size: 8px;;
 }
 
 @media (max-width: 768px) {

@@ -4,12 +4,13 @@ import { FormsModule, FormGroup, Validators, FormBuilder  } from '@angular/forms
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserDTO } from '../models/user.dto';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, RouterModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
