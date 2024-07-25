@@ -8,21 +8,20 @@ import { RouterModule } from '@angular/router';
 
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-signup',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, HttpClientModule, RouterModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.css'
 })
-export class LoginComponent {
-
-  
-  loginForm: FormGroup;
+export class SignupComponent {
+ 
+  signupForm: FormGroup;
   showSignupForm: boolean = true;
 
  
   constructor(private fb: FormBuilder,  private http: HttpClient) {
-    this.loginForm = this.createSignupForm();
+    this.signupForm = this.createSignupForm();
   }
   private createSignupForm(): FormGroup {
     return this.fb.group({
@@ -43,7 +42,7 @@ export class LoginComponent {
     const user: UserDTO = this.getUserFromForm();
     console.log(user)
 
-   if (this.loginForm.valid) {
+   if (this.signupForm.valid) {
       const user: UserDTO = this.getUserFromForm();
       this.http.post('http://localhost:8080/URL_DA_API', user).subscribe(response => {
         console.log('Usuário cadastrado com sucesso', response);
@@ -55,8 +54,8 @@ export class LoginComponent {
 
   private getUserFromForm(): UserDTO {
     return {
-      email: this.loginForm.value.email,
-      password: this.loginForm.value.password
+      email: this.signupForm.value.email,
+      password: this.signupForm.value.password
     };
   }
 

@@ -1,10 +1,10 @@
-<div class="container">
+<!--/*<div class="container">
     <div class="login-container" id="login-container">
         <h2><i class="fas fa-user login-icon"></i></h2>
         <form id="login-form">
             <div class="input-group">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email"   name="email" required>
             </div>
             <div class="input-group">
                 <label for="password">Senha</label>
@@ -12,26 +12,30 @@
             </div>
             <button type="submit" class="entrar">Entrar</button>
         </form>
-        <p>Não tem uma conta? <a href="#" id="signup-link" (click)="showSignupForm($event)">Cadastrar</a></p>
-    </div>
+       <p>Não tem uma conta? <a href="../signup/signup.component.html" id="signup-link" >Cadastrar</a></p>
+    </div>      
+</div>-->
 
-    <div class="signup-container" id="signup-container" style="display: none;">
-        <h2>Cadastrar</h2>
-        <form id="signup-form">
-            <div class="input-group">
-                <label for="signup-email">E-mail</label>
-                <input type="email" id="signup-email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="signup-password">Senha</label>
-                <input type="password" id="signup-password" name="password" required>
-            </div>
-            <div class="input-group">
-                <label for="signup-confirm-password">Confirmar Senha</label>
-                <input type="password" id="signup-confirm-password" name="confirm-password" required>
-            </div>
-            <button type="submit">Cadastrar</button>
-        </form>
-        <p>Já tem uma conta? <a href="#" id="login-link" (click)="showLoginForm($event)">Entrar</a></p>
-    </div>
+<div class="container">
+  <div class="login-container" id="login-container" *ngIf="showLoginForm">
+    <h2><i class="fas fa-user login-icon"></i></h2>
+    <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input type="login-email" id="login-email" formControlName="login-email" required>
+        <div
+          *ngIf="loginForm.controls['email']?.invalid && (loginForm.controls['email']?.dirty || loginForm.controls['email']?.touched)">
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="login-password">Senha</label>
+        <input type="login-password" id="login-password" formControlName="password" required>
+        <div
+          *ngIf="loginForm.controls['password']?.invalid && (loginForm.controls['password']?.dirty || loginForm.controls['password']?.touched)">
+        </div>
+      </div>
+      <button type="submit" class="entrar" [disabled]="loginForm.invalid">Entrar</button>
+    </form>
+    <p>Não tem uma conta? <a href="#" routerLink="/signup" id="signup-link">Cadastre-se</a></p>
+  </div>
 </div>
