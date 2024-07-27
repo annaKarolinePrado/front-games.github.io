@@ -18,7 +18,7 @@ export class SignupComponent {
  
   signupForm: FormGroup;
   showSignupForm: boolean = true;
-
+  successMessage: string | null = null;
  
   constructor(private fb: FormBuilder,  private http: HttpClient) {
     this.signupForm = this.createSignupForm();
@@ -39,13 +39,12 @@ export class SignupComponent {
   }
 
   onSubmit() {
-    const user: UserDTO = this.getUserFromForm();
-    console.log(user)
-
    if (this.signupForm.valid) {
       const user: UserDTO = this.getUserFromForm();
-      this.http.post('http://localhost:8080/URL_DA_API', user).subscribe(response => {
+      this.http.post('http://localhost:8080/api/users', user).subscribe(response => {
         console.log('Usuário cadastrado com sucesso', response);
+        this.signupForm.reset();  
+        this.successMessage = 'Usuário cadastrado com sucesso!'; 
       }, error => {
         console.error('Erro ao cadastrar usuário', error);
       });

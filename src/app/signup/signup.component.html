@@ -1,6 +1,11 @@
 <div class="container">
   <div class="signup-container" *ngIf="showSignupForm">
     <h2>Cadastrar</h2>
+
+    <div *ngIf="successMessage" class="success-message">
+      <p>{{ successMessage }}</p>
+    </div>
+    
     <div *ngIf="signupForm.controls['email']?.invalid && (signupForm.controls['email']?.dirty || signupForm.controls['email']?.touched)">
       <small class="" *ngIf="signupForm.controls['email']?.errors?.['required']">E-mail é obrigatório.</small>
       <small class="" *ngIf="signupForm.controls['email']?.errors?.['email']">E-mail inválido.</small>
