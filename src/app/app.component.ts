@@ -13,5 +13,5 @@ import { SignupComponent } from './signup/signup.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'fiesc-front';
+  title = 'games-front';
 }
