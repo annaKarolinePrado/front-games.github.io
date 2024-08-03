@@ -1,7 +1,6 @@
-
 #projects {
   width: 90%;
-  margin-left: 5%;
+  margin: 0 auto;
 }
 
 .welcome-message {
@@ -9,7 +8,7 @@
   font-size: 1.5rem;
   margin-top: 10%;
   padding: 26px;
-  color: var(--text-color);
+  color: var(--text-color)
 }
 
 .project-grid {
@@ -52,18 +51,17 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .card-front {
-  background-color: #0000b3;
+  background-color: var(--menu-color);
 }
 
 .card-back {
   background-color: #0000ff;
   transform: rotateY(180deg);
 }
-
 
 @media (max-width: 1024px) {
   .project-grid {
@@ -74,7 +72,6 @@
 @media (max-width: 768px) {
   .project-grid {
     grid-template-columns: 1fr;
-    margin-top: 9%;
   }
 
   .welcome-message {
