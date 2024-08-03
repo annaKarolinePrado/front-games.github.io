@@ -6,6 +6,7 @@ import { AboutComponent } from './app/about/about.component';
 import { ContactComponent } from './app/contact/contact.component';
 import { LoginComponent } from './app/login/login.component';
 import { SignupComponent } from './app/signup/signup.component';
+import { HomeGameComponent } from './app/home-game/home-game.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'contato', component: ContactComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'home-game', component: HomeGameComponent },
 ];
 
 bootstrapApplication(AppComponent, {

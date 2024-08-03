@@ -1,0 +1,88 @@
+
+#projects {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.welcome-message {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 10%;
+  padding: 26px;
+  color: var(--text-color);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.project-card {
+  perspective: 1000px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+  font-size: 1.3rem;
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.project-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.card-front {
+  background-color: #0000b3;
+}
+
+.card-back {
+  background-color: #0000ff;
+  transform: rotateY(180deg);
+}
+
+
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    margin-top: 9%;
+  }
+
+  .welcome-message {
+    font-size: 1.2rem;
+    margin-top: 10%;
+  }
+
+  main {
+    margin-top: 10%;
+  }
+}
