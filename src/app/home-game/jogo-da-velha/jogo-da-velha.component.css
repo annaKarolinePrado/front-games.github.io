@@ -1,0 +1,67 @@
+h2 {
+  color: #ff0066;
+  margin-bottom: 7%;
+  margin-top: 7%;
+  text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
+}
+
+.divPlayer,
+.buttonPlayer {
+  margin-top: 35px;
+}
+
+.player1 {
+  text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
+  margin-bottom: 2%;
+}
+
+.player2 {
+  text-shadow: 0 0 5px #ff0066, 0 0 10px #ff0066, 0 0 20px #ff0066;
+  margin-bottom: 2%;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  width: calc(50% - 20px);
+  padding: 6px;
+  margin-bottom: 15px;
+  border: 1px solid var(--menu-color);
+  border-radius: 10px;
+  background-color: var(--menu-color);
+  color: var(--text-color);
+  box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 15px #6600cc;
+}
+
+button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--cor-botao);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #8000ff;
+  box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
+}
+
+@media (max-width: 765px) {
+  h2 {
+    margin-top: 30%;
+  }
+
+  input {
+    width: calc(80% - 20px);
+  }
+
+  .divPlayer,
+  .buttonPlayer {
+    margin-top: 45px;
+  }
+}

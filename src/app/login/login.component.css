@@ -21,9 +21,11 @@
     font-size: 1.1rem;
 }
 
-h2, .input-group {
+h2, .input-group input {
     margin-bottom: 20px;
     text-align: center;
+    width: 100%;
+    padding: 6px;
 }
 
 #signup-email, #signup-password, #signup-confirm-password, 
@@ -39,6 +41,7 @@ h2, .input-group {
 label {
     display: block;
     margin-bottom: 5px;
+    width: 100%;
 }
 
 #login-form input:focus {
@@ -65,7 +68,7 @@ input[type="login-email"], input[type="login-password"] {
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 10px 30px;
     background-color: var(--cor-botao);
     color: var(--text-color-botao);
     border: none;
@@ -105,5 +108,8 @@ a:hover {
     }
     .login-container p, .signup-container p {
         font-size: 1.2rem;
+    }
+    button {
+      margin-top: 45px;
     }
 }

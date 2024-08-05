@@ -8,6 +8,8 @@ import { LoginComponent } from './app/login/login.component';
 import { SignupComponent } from './app/signup/signup.component';
 import { HomeGameComponent } from './app/home-game/home-game.component';
 import { JogoDaVelhaComponent } from './app/home-game/jogo-da-velha/jogo-da-velha.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GameBoardComponent } from './app/home-game/jogo-da-velha/game-board/game-board.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,10 +19,12 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'home-game', component: HomeGameComponent },
   { path: 'home-game/jogo-da-velha', component: JogoDaVelhaComponent },
+  { path: 'home-game/jogo-da-velha/board', component: GameBoardComponent }
 ];
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes)
+    provideRouter(routes),
+    { provide: ReactiveFormsModule, useClass: ReactiveFormsModule }
   ]
 }).catch(err => console.error(err));

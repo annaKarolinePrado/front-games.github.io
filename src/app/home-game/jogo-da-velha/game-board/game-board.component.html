@@ -1,0 +1,23 @@
+<p>game-board works!</p>
+
+<div *ngIf="gameStarted">
+  <h2>Jogador Atual: {{ currentPlayer }}</h2>
+
+  <div *ngIf="winner">
+    <h3 *ngIf="winner === 'Empate'">O jogo terminou em empate!</h3>
+    <h3 *ngIf="winner !== 'Empate'">{{ winner }} venceu!</h3>
+    <button (click)="restartGame()">Jogar Novamente</button>
+  </div>
+
+  <div class="board">
+    <div *ngFor="let row of board; let rowIndex = index">
+      <div *ngFor="let cell of row; let colIndex = index" (click)="makeMove(rowIndex, colIndex)">
+        {{ cell }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!gameStarted">
+  <p>Inicie o jogo a partir da página inicial.</p>
+</div>
