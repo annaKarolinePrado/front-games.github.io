@@ -1,10 +1,12 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormsModule, FormGroup, Validators, FormBuilder  } from '@angular/forms';
+import { FormsModule, FormGroup, Validators, FormBuilder, AbstractControl, AsyncValidatorFn, ValidationErrors  } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserDTO } from '../models/user.dto';
 import { RouterModule } from '@angular/router';
+import { catchError, delay, map, Observable, of } from 'rxjs';
+import { UserService } from '../services/user/user.service';
 
 
 @Component({
@@ -20,12 +22,13 @@ export class SignupComponent {
   showSignupForm: boolean = true;
   successMessage: string | null = null;
  
-  constructor(private fb: FormBuilder,  private http: HttpClient) {
+  constructor(private fb: FormBuilder,  private http: HttpClient, private userService:UserService) {
     this.signupForm = this.createSignupForm();
   }
   private createSignupForm(): FormGroup {
     return this.fb.group({
       email: ['', [Validators.required, Validators.email]],
+      nickname: ['', [Validators.required], [this.uniqueNicknameValidator(this.userService)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required]
     }, { validators: this.passwordsMatchValidator });
@@ -54,6 +57,7 @@ export class SignupComponent {
   private getUserFromForm(): UserDTO {
     return {
       email: this.signupForm.value.email,
+      nickname: this.signupForm.value.nickname,
       password: this.signupForm.value.password
     };
   }
@@ -62,5 +66,15 @@ export class SignupComponent {
     event.preventDefault();
     this.showSignupForm = false;
     // lógica para mostrar o formulário de login
+  }
+
+   uniqueNicknameValidator(userService: UserService): AsyncValidatorFn {
+    return (control: AbstractControl): Observable<ValidationErrors | null> => {
+      return userService.isNicknameUnique(control.value).pipe(
+        delay(500), // Apenas para simular latência
+        map(isUnique => (isUnique ? null : { nonUniqueNickname: true })),
+        catchError(() => of(null)) // Trate erros como se fossem válidos
+      );
+    };
   }
 }

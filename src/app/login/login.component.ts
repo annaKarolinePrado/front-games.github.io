@@ -56,6 +56,7 @@ export class LoginComponent {
   private getUserFromForm(): UserDTO {
     return {
       email: this.loginForm.value.email,
+      nickname: this.loginForm.value.nickname,
       password: this.loginForm.value.password
     };
   }

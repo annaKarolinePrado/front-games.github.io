@@ -5,39 +5,46 @@
     <div *ngIf="successMessage" class="success-message">
       <p>{{ successMessage }}</p>
     </div>
-    
-    <div *ngIf="signupForm.controls['email']?.invalid && (signupForm.controls['email']?.dirty || signupForm.controls['email']?.touched)">
+
+    <div
+      *ngIf="signupForm.controls['email']?.invalid && (signupForm.controls['email']?.dirty || signupForm.controls['email']?.touched)">
       <small class="" *ngIf="signupForm.controls['email']?.errors?.['required']">E-mail é obrigatório.</small>
       <small class="" *ngIf="signupForm.controls['email']?.errors?.['email']">E-mail inválido.</small>
     </div>
 
     <div
-            *ngIf="signupForm.controls['password']?.invalid && (signupForm.controls['password']?.dirty || signupForm.controls['password']?.touched)">
-            <small class="" *ngIf="signupForm.controls['password']?.errors?.['required']">Senha é obrigatória.</small>
-            <small class="" *ngIf="signupForm.controls['password']?.errors?.['minlength']">A senha deve ter pelo menos 6
-              caracteres.</small>
-          </div>
-          <div class="validacao"
-          *ngIf="signupForm.errors?.['mismatch'] && (signupForm.controls['confirmPassword']?.dirty || signupForm.controls['confirmPassword']?.touched)">
-          <small class="">As senhas não coincidem.</small>
-        </div>
+      *ngIf="signupForm.controls['password']?.invalid && (signupForm.controls['password']?.dirty || signupForm.controls['password']?.touched)">
+      <small class="" *ngIf="signupForm.controls['password']?.errors?.['required']">Senha é obrigatória.</small>
+      <small class="" *ngIf="signupForm.controls['password']?.errors?.['minlength']">A senha deve ter pelo menos 6
+        caracteres.</small>
+    </div>
+
+    <div class="validacao"
+      *ngIf="signupForm.errors?.['mismatch'] && (signupForm.controls['confirmPassword']?.dirty || signupForm.controls['confirmPassword']?.touched)">
+      <small class="">As senhas não coincidem.</small>
+    </div>
 
     <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div class="input-group">
         <label for="signup-email">E-mail</label>
         <input type="email" id="signup-email" formControlName="email" required>
-       
       </div>
+
+      <div class="input-group">
+        <label for="nickname">Nickname</label>
+        <input type="text" id="nickname" formControlName="nickname" required>
+      </div>
+
       <div class="input-group">
         <label for="signup-password">Senha</label>
         <input type="password" id="signup-password" formControlName="password" required>
-        
       </div>
+
       <div class="input-group">
         <label for="signup-confirm-password">Confirmar Senha</label>
         <input type="password" id="signup-confirm-password" formControlName="confirmPassword" required>
-       
       </div>
+
       <button type="submit" [disabled]="signupForm.invalid">Cadastrar</button>
     </form>
     <p>Já tem uma conta? <a href="#" routerLink="/login">Lorar</a></p>

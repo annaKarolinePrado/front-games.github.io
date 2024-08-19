@@ -11,8 +11,9 @@
 <div *ngIf="gameOver" class="overlay">
     <p>{{ winner === 'Empate' ? 'O jogo terminou em empate!' : winner + ' ganhou!' }}</p>
     <button (click)="goBack()">Voltar ao Início</button>
+    <button (click)="resetBoard()" class="reset">Reiniciar Jogo</button> 
 </div>
 
 <div >
-    <button class="give-up" (click)="goBack()">Desistir</button>
+    <button (click)="goBack()" class="give-up">Desistir</button>
 </div>

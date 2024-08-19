@@ -61,6 +61,13 @@ export class GameBoardComponent {
     }
   }
 
+  resetBoard(): void {
+    this.board = [['', '', ''], ['', '', ''], ['', '', '']];
+    this.currentPlayer = this.player1;
+    this.gameOver = false;
+    this.winner = '';
+  }
+
   goBack(): void {
     this.router.navigate(['/home-game']);
   }
