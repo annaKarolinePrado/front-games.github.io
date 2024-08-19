@@ -1,19 +1,18 @@
-<p>Vez do jogador: {{ currentPlayer }}</p> 
+<p class="next-player">Vez do jogador: {{ currentPlayer }}</p> 
 
-<div *ngIf="!gameOver" class="board">
-    <div *ngFor="let row of board; let i = index">
-      <button *ngFor="let cell of row; let j = index"
-              class="cell"
-              (click)="makeMove(i, j)">
-        {{ cell }}
-      </button>
+<div class="board">
+    <div *ngFor="let row of board; let i = index" class="row">
+      <div *ngFor="let cell of row; let j = index" class="cell" (click)="makeMove(i, j)">
+        <span [ngClass]="{'x-cell': cell === 'X', 'o-cell': cell === 'O'}">{{ cell }}</span>
+      </div>
     </div>
-   
-</div>
- 
-<div *ngIf="gameOver" class="overlay">
-    <p *ngIf="winner !== 'Empate'">{{ winner }} venceu!</p>
-    <p *ngIf="winner === 'Empate'">O jogo terminou em empate!</p>
-    <button (click)="goBack()">Voltar ao início</button>
 </div>
   
+<div *ngIf="gameOver" class="overlay">
+    <p>{{ winner === 'Empate' ? 'O jogo terminou em empate!' : winner + ' ganhou!' }}</p>
+    <button (click)="goBack()">Voltar ao Início</button>
+</div>
+
+<div >
+    <button class="give-up" (click)="goBack()">Desistir</button>
+</div>
