@@ -1,5 +1,4 @@
 h2 {
-  color: #ff0066;
   margin-bottom: 7%;
   margin-top: 7%;
   text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
@@ -10,13 +9,8 @@ h2 {
   margin-top: 35px;
 }
 
-.player1 {
+.player1, .player2  {
   text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
-  margin-bottom: 2%;
-}
-
-.player2 {
-  text-shadow: 0 0 5px #ff0066, 0 0 10px #ff0066, 0 0 20px #ff0066;
   margin-bottom: 2%;
 }
 
@@ -49,6 +43,11 @@ button {
 button:hover {
   background-color: #8000ff;
   box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
+}
+
+.error {
+  color: red;
+  font-size: 0.875em;
 }
 
 @media (max-width: 765px) {

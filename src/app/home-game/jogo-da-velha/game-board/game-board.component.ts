@@ -1,75 +1,67 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-board',
   standalone: true,
-  imports: [],
+  imports: [CommonModule], 
   templateUrl: './game-board.component.html',
-  styleUrl: './game-board.component.css'
+  styleUrls: ['./game-board.component.css']
 })
 export class GameBoardComponent {
-  board: string[][] = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-  ];
-  currentPlayer: string = '';
-  winner: string | null = null;
   player1: string = '';
   player2: string = '';
-  gameStarted: boolean = false;
+  currentPlayer: string = '';
+  board: string[][] = [['', '', ''], ['', '', ''], ['', '', '']];
+  gameOver: boolean = false;
+  winner: string = '';
 
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras.state) {
-      const state = navigation.extras.state as { player1: string; player2: string };
-      this.player1 = state.player1;
-      this.player2 = state.player2;
-      this.currentPlayer = this.player1;
-      this.gameStarted = true;
-    } else {
-      // Redirect if not started from JogoDaVelhaComponent
-      this.router.navigate(['/']);
+  constructor(private router: Router) {
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if (state) {
+      this.player1 = state['player1'];
+      this.player2 = state['player2'];
+      this.currentPlayer = this.player1; // Começa com o Jogador 1
     }
   }
 
-  makeMove(row: number, col: number): void {
-    if (this.board[row][col] === '' && !this.winner) {
-      this.board[row][col] = this.currentPlayer === this.player1 ? 'X' : 'O';
-      if (this.checkWinner()) {
-        this.winner = this.currentPlayer;
-      } else if (this.board.flat().every(cell => cell)) {
-        this.winner = 'Empate';
-      }
+  makeMove(i: number, j: number): void {
+    if (!this.board[i][j] && !this.gameOver) {
+      this.board[i][j] = this.currentPlayer === this.player1 ? 'X' : 'O';
+      this.checkWinner();
       this.currentPlayer = this.currentPlayer === this.player1 ? this.player2 : this.player1;
     }
   }
 
-  checkWinner(): boolean {
-    const lines = [
-      [this.board[0][0], this.board[0][1], this.board[0][2]],
-      [this.board[1][0], this.board[1][1], this.board[1][2]],
-      [this.board[2][0], this.board[2][1], this.board[2][2]],
-      [this.board[0][0], this.board[1][0], this.board[2][0]],
-      [this.board[0][1], this.board[1][1], this.board[2][1]],
-      [this.board[0][2], this.board[1][2], this.board[2][2]],
-      [this.board[0][0], this.board[1][1], this.board[2][2]],
-      [this.board[0][2], this.board[1][1], this.board[2][0]]
+  checkWinner(): void {
+    const winningCombinations = [
+      [[0, 0], [0, 1], [0, 2]],
+      [[1, 0], [1, 1], [1, 2]],
+      [[2, 0], [2, 1], [2, 2]],
+      [[0, 0], [1, 0], [2, 0]],
+      [[0, 1], [1, 1], [2, 1]],
+      [[0, 2], [1, 2], [2, 2]],
+      [[0, 0], [1, 1], [2, 2]],
+      [[0, 2], [1, 1], [2, 0]],
     ];
-    return lines.some(line => line.every(cell => cell === 'X') || line.every(cell => cell === 'O'));
+
+    for (const combination of winningCombinations) {
+      const [a, b, c] = combination;
+      if (this.board[a[0]][a[1]] && this.board[a[0]][a[1]] === this.board[b[0]][b[1]] && this.board[a[0]][a[1]] === this.board[c[0]][c[1]]) {
+        this.winner = this.currentPlayer;
+        this.gameOver = true;
+        return;
+      }
+    }
+
+    if (this.board.flat().every(cell => cell)) {
+      this.winner = 'Empate';
+      this.gameOver = true;
+    }
   }
 
-  restartGame(): void {
-    this.board = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-    ];
-    this.currentPlayer = this.player1;
-    this.winner = null;
-    this.gameStarted = false;
+  goBack(): void {
+    this.router.navigate(['/home-game']);
   }
 }

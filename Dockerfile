@@ -10,6 +10,16 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install Angular CLI globally
+RUN npm install -g @angular/cli
+
+# Install Bootstrap
+RUN npm install bootstrap
+
+# Install canvas-confetti and its type declarations
+RUN npm install canvas-confetti
+RUN npm install --save-dev @types/canvas-confetti
+
 # Copy the rest of the application
 COPY . .
 
@@ -20,7 +30,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copy the built Angular application from Stage 1
-COPY --from=build /app/dist/fiesc-front /usr/share/nginx/html
+COPY --from=build /app/dist/games-front /usr/share/nginx/html
 
 # Copy the Nginx configuration file
 COPY nginx.conf /etc/nginx/conf.d/default.conf
