@@ -1,3 +1,4 @@
+import { LoginDTO } from './../models/login.dto';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule, FormGroup, Validators, FormBuilder  } from '@angular/forms';
@@ -27,16 +28,8 @@ export class LoginComponent {
   private createSignupForm(): FormGroup {
     return this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required]
-    }, { validators: this.passwordsMatchValidator });
-  }
-
-  private passwordsMatchValidator(form: FormGroup) {
-    const password = form.get('password');
-    const confirmPassword = form.get('confirmPassword');
-    return password && confirmPassword && password.value === confirmPassword.value
-      ? null : { mismatch: true };
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
   onSubmit() {
@@ -45,8 +38,9 @@ export class LoginComponent {
 
    if (this.loginForm.valid) {
       const user: UserDTO = this.getUserFromForm();
-      this.http.post('http://localhost:8080/URL_DA_API', user).subscribe(response => {
-        console.log('Usuário cadastrado com sucesso', response);
+      this.http.post<LoginDTO>('http://localhost:8080/login', user).subscribe((loginDTO: LoginDTO) => {
+        console.log('Usuário cadastrado com sucesso', loginDTO);
+        localStorage.setItem("token", loginDTO.token);
       }, error => {
         console.error('Erro ao cadastrar usuário', error);
       });

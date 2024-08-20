@@ -33,6 +33,9 @@
       <div class="input-group">
         <label for="nickname">Nickname</label>
         <input type="text" id="nickname" formControlName="nickname" required>
+        <div *ngIf="signupForm.get('nickname')?.hasError('nonUniqueNickname')">
+          Este nickname já está em uso.
+        </div>
       </div>
 
       <div class="input-group">

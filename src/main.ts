@@ -9,6 +9,7 @@ import { LoginComponent } from './app/login/login.component';
 import { SignupComponent } from './app/signup/signup.component';
 import { HomeGameComponent } from './app/home-game/home-game.component';
 import { JogoDaVelhaComponent } from './app/home-game/jogo-da-velha/jogo-da-velha.component';
+import { JogoDaMemoriaComponent } from './app/home-game/jogo-da-memoria/jogo-da-memoria.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'home-game', component: HomeGameComponent },
   { path: 'home-game/jogo-da-velha', component: JogoDaVelhaComponent },
   { path: 'home-game/jogo-da-velha/game-board', component: GameBoardComponent },
+  { path: 'home-game/jogo-da-memoria', component: JogoDaMemoriaComponent },
 ];
 
 bootstrapApplication(AppComponent, {

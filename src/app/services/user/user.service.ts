@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -11,5 +12,14 @@ export class UserService {
     const isUnique = !this.existingNicknames.includes(nickname);
     return of(isUnique); // Aqui você faria uma chamada HTTP real
   }
-  constructor() { }
+
+  private baseUrl = 'http://localhost:8080/api/users';
+
+  constructor(private http: HttpClient) { }
+
+  checkNickname(nickname: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.baseUrl}/check-nickname`, { params: { nickname } });
+  }
+  
+
 }
