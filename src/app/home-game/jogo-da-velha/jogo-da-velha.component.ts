@@ -18,6 +18,19 @@ export class JogoDaVelhaComponent {
 
   constructor(private router: Router) {}
 
+  showFreeGame = false;
+  showCardFreeGame = true;
+
+  homeFreeGame() {
+    this.showFreeGame = true;
+    this.showCardFreeGame = false; 
+  }
+
+  backToOption() {
+    this.showFreeGame = false;
+    this.showCardFreeGame = true;
+  }
+
   startGame(): void {
     this.player1Error = '';
     this.player2Error = '';

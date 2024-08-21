@@ -8,11 +8,11 @@ import { ContactComponent } from './app/contact/contact.component';
 import { LoginComponent } from './app/login/login.component';
 import { SignupComponent } from './app/signup/signup.component';
 import { HomeGameComponent } from './app/home-game/home-game.component';
-import { JogoDaVelhaComponent } from './app/home-game/jogo-da-velha/jogo-da-velha.component';
 import { JogoDaMemoriaComponent } from './app/home-game/jogo-da-memoria/jogo-da-memoria.component';
+import { JogoDaVelhaComponent } from './app/home-game/jogo-da-velha/jogo-da-velha.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'sobre', component: AboutComponent },
   { path: 'contato', component: ContactComponent },
   { path: 'login', component: LoginComponent },

@@ -1,3 +1,4 @@
+import { HomeComponent } from './../home/home.component';
 import { LoginDTO } from './../models/login.dto';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
@@ -5,8 +6,7 @@ import { FormsModule, FormGroup, Validators, FormBuilder  } from '@angular/forms
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserDTO } from '../models/user.dto';
-import { RouterModule } from '@angular/router';
-
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,12 +17,12 @@ import { RouterModule } from '@angular/router';
 })
 export class LoginComponent {
 
-  
   loginForm: FormGroup;
   showSignupForm: boolean = true;
 
- 
-  constructor(private fb: FormBuilder,  private http: HttpClient) {
+  constructor(private fb: FormBuilder,  
+              private http: HttpClient, 
+              private router: Router) {
     this.loginForm = this.createSignupForm();
   }
   private createSignupForm(): FormGroup {
@@ -41,7 +41,9 @@ export class LoginComponent {
       this.http.post<LoginDTO>('http://localhost:8080/login', user).subscribe((loginDTO: LoginDTO) => {
         console.log('Usuário cadastrado com sucesso', loginDTO);
         localStorage.setItem("token", loginDTO.token);
-      }, error => {
+        this.router.navigate(['/home']);
+      }, 
+      error => {
         console.error('Erro ao cadastrar usuário', error);
       });
     }
@@ -58,6 +60,5 @@ export class LoginComponent {
   showLoginForm(event: Event) {
     event.preventDefault();
     this.showSignupForm = false;
-    // lógica para mostrar o formulário de login
   }
 }

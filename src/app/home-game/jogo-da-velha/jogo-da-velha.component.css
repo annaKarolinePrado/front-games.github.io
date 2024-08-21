@@ -1,11 +1,16 @@
-h2 {
+.free-game {
+  margin-top: 15%;
+}
+
+.name-player {
   margin-bottom: 7%;
   margin-top: 7%;
   text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
 }
 
 .divPlayer,
-.buttonPlayer {
+.buttonPlayer,
+.buttonBack {
   margin-top: 35px;
 }
 
@@ -41,6 +46,7 @@ button {
 }
 
 button:hover {
+  transform: scale(1.1);
   background-color: #8000ff;
   box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
 }
@@ -50,17 +56,53 @@ button:hover {
   font-size: 0.875em;
 }
 
-@media (max-width: 765px) {
-  h2 {
-    margin-top: 30%;
-  }
+.card {
+  width: 37%;
+  height: 20%;
+  margin-left: 31.5%;
+  margin-bottom: 5%;
+  background-color: var(--menu-color);
+  color: var(--text-color);
+  border: 2px solid #00ffcc; 
+  border-radius: 10px;
+  box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
 
+.card:hover {
+  transform: scale(1.1);
+}
+
+.option {
+  margin-top: 30%;
+}
+
+.option-game {
+  padding: 8%;
+  text-align: center;
+  font-size: 1.3em;
+  text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
+}
+
+@media (max-width: 765px) {
   input {
     width: calc(80% - 20px);
   }
 
-  .divPlayer,
-  .buttonPlayer {
-    margin-top: 45px;
+  .option {
+    margin-top: 50%;
+  }
+
+  .card {
+    margin-left: 15%;
+    margin-bottom: 10%;
+    width: 70%;
+    height: 50%;
+    font-size: 0.9em;
+  }
+
+  .free-game {
+    margin-top: 25%;
   }
 }

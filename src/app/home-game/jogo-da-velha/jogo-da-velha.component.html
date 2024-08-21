@@ -1,11 +1,11 @@
-
-<div>
-    <h2>Informe os nomes dos jogadores</h2>
+<div *ngIf="showFreeGame" class="free-game">
+    <h2 class="name-player">Informe os nomes dos jogadores</h2>
     <div class="divPlayer">
         <label for="player1" class="player1">Jogador X:</label>
         <input id="player1" [(ngModel)]="player1" name="player1">
         <div *ngIf="player1Error" class="error">{{ player1Error }}</div>
     </div>
+
     <div class="divPlayer">
         <label for="player2" class="player2">Jogador O:</label>
         <input id="player2" [(ngModel)]="player2" name="player2">
@@ -14,5 +14,23 @@
     <div class="buttonPlayer">
         <button (click)="startGame()">Iniciar Jogo</button>
     </div>
+    <div class="buttonBack">
+        <button (click)="backToOption()">Voltar</button>
+    </div>
 </div>
+<div class="option">
+    <div class="card card-jogo-livre" (click)="homeFreeGame()" *ngIf="showCardFreeGame">
+        <div class="card-content">
+          <p class="option-game">Jogo livre</p>
+        </div>
+    </div>
+    <div class="card" *ngIf="showCardFreeGame">
+        <div class="card-content">
+          <p class="option-game">Rank de vitórias</p>
+        </div>
+    </div>
+</div>
+
+
+
 
