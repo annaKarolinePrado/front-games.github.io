@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jogo-da-memoria',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './jogo-da-memoria.component.css'
 })
 export class JogoDaMemoriaComponent {
+
+  constructor(private router: Router) {}
+
+  goBack(): void {
+    this.router.navigate(['/home-game']);
+  }
 
 }

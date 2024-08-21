@@ -1,3 +1,7 @@
+.div-games {
+  margin-bottom: 20%;
+}
+
 #projects {
   width: 90%;
   margin: 0 auto;
@@ -5,7 +9,7 @@
 
 .welcome-message {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   margin-top: 10%;
   padding: 26px;
   color: var(--text-color)
@@ -60,7 +64,8 @@
 }
 
 .card-back {
-  background-color: #0000ff;
+  background-color: var(--text-color);
+  color: var(--menu-color);
   transform: rotateY(180deg);
 }
 
@@ -76,7 +81,7 @@
   }
 
   .welcome-message {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     margin-top: 10%;
   }
 

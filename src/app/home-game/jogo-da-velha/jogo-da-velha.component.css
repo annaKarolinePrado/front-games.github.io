@@ -11,7 +11,7 @@
 .divPlayer,
 .buttonPlayer,
 .buttonBack {
-  margin-top: 35px;
+  margin-top: 15px;
 }
 
 .player1, .player2  {
@@ -75,7 +75,7 @@ button:hover {
 }
 
 .option {
-  margin-top: 30%;
+  margin-top: 15%;
 }
 
 .option-game {
@@ -91,7 +91,7 @@ button:hover {
   }
 
   .option {
-    margin-top: 50%;
+    margin-top: 35%;
   }
 
   .card {

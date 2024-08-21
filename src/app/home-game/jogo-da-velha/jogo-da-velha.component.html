@@ -18,6 +18,7 @@
         <button (click)="backToOption()">Voltar</button>
     </div>
 </div>
+
 <div class="option">
     <div class="card card-jogo-livre" (click)="homeFreeGame()" *ngIf="showCardFreeGame">
         <div class="card-content">
@@ -27,6 +28,11 @@
     <div class="card" *ngIf="showCardFreeGame">
         <div class="card-content">
           <p class="option-game">Rank de vitórias</p>
+        </div>
+    </div>
+    <div class="card" *ngIf="showCardFreeGame">
+        <div class="card-content">
+          <p (click)="goBack()" class="option-game">Voltar</p>
         </div>
     </div>
 </div>
