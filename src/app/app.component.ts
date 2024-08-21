@@ -8,6 +8,7 @@ import { HomeGameComponent } from './home-game/home-game.component';
 import { GameBoardComponent } from './home-game/jogo-da-velha/game-board/game-board.component';
 import { JogoDaMemoriaComponent } from './home-game/jogo-da-memoria/jogo-da-memoria.component';
 import { JogoDaVelhaComponent } from './home-game/jogo-da-velha/jogo-da-velha.component';
+import { GameBoardFreeComponent } from './home-game/jogo-da-memoria/game-board-free/game-board-free.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { JogoDaVelhaComponent } from './home-game/jogo-da-velha/jogo-da-velha.co
             HomeGameComponent, 
             JogoDaVelhaComponent,
             GameBoardComponent,
-            JogoDaMemoriaComponent],
+            JogoDaMemoriaComponent,
+            GameBoardFreeComponent ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

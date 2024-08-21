@@ -16,4 +16,8 @@ export class JogoDaMemoriaComponent {
     this.router.navigate(['/home-game']);
   }
 
+  showGameFree(): void {
+    this.router.navigate(['home-game/jogo-da-memoria/game-board-free']);
+  }
+
 }
