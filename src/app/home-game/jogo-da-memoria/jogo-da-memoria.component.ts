@@ -13,7 +13,7 @@ export class JogoDaMemoriaComponent {
   constructor(private router: Router) {}
 
   goBack(): void {
-    this.router.navigate(['/home-game']);
+    this.router.navigate(['']);
   }
 
   showGameFree(): void {

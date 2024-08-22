@@ -18,12 +18,12 @@ import { FlowerBoardComponent } from './app/home-game/jogo-da-memoria/game-board
 import { AvailableBoardsComponent } from './app/home-game/jogo-da-memoria/game-board-free/available-boards/available-boards.component';
 
 const routes: Routes = [
+  { path: '', component: HomeGameComponent },
   { path: 'home', component: HomeComponent },
   { path: 'sobre', component: AboutComponent },
   { path: 'contato', component: ContactComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'home-game', component: HomeGameComponent },
+  { path: 'signup', component: SignupComponent },  
   { path: 'home-game/jogo-da-velha', component: JogoDaVelhaComponent },
   { path: 'home-game/jogo-da-velha/game-board', component: GameBoardComponent },
   { path: 'home-game/jogo-da-memoria', component: JogoDaMemoriaComponent },
@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'home-game/jogo-da-memoria/game-board-free/hand-board', component: HandBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/flower-board', component: FlowerBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/available-boards', component: AvailableBoardsComponent },
+  
 ];
 
 bootstrapApplication(AppComponent, {

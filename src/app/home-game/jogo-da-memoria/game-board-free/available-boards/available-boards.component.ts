@@ -28,6 +28,6 @@ export class AvailableBoardsComponent {
   }
 
   goBack(): void {
-    this.router.navigate(['/home-game']);
+    this.router.navigate(['']);
   }
 }

@@ -50,6 +50,6 @@ export class JogoDaVelhaComponent {
   }
 
   goBack(): void {
-    this.router.navigate(['/home-game']);
+    this.router.navigate(['']);
   }
 }

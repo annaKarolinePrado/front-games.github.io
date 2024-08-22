@@ -113,6 +113,6 @@ export class FruitBoardComponent {
   }
 
   goBack(): void {
-    this.router.navigate(['home-game/jogo-da-memoria/game-board-free/available-boards']);
+    this.router.navigate(['home-game/jogo-da-memoria']);
   }
 }
