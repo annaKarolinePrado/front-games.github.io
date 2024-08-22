@@ -17,19 +17,31 @@ export class FruitBoardComponent {
     { id: 4, image: '🍇', revealed: false },
     { id: 5, image: '🍉', revealed: false },
     { id: 6, image: '🍍', revealed: false },
-    { id: 7, image: '🍎', revealed: false },
-    { id: 8, image: '🍌', revealed: false },
-    { id: 9, image: '🍒', revealed: false },
-    { id: 10, image: '🍇', revealed: false },
-    { id: 11, image: '🍉', revealed: false },
-    { id: 12, image: '🍍', revealed: false }
+    { id: 7, image: '🍓', revealed: false },
+    { id: 8, image: '🍑', revealed: false },
+    { id: 9, image: '🍋', revealed: false },
+    { id: 10, image: '🍈', revealed: false },
+    { id: 11, image: '🥥', revealed: false },
+    { id: 12, image: '🍐', revealed: false },
+    { id: 13, image: '🍎', revealed: false },
+    { id: 14, image: '🍌', revealed: false },
+    { id: 15, image: '🍒', revealed: false },
+    { id: 16, image: '🍇', revealed: false },
+    { id: 17, image: '🍉', revealed: false },
+    { id: 18, image: '🍍', revealed: false },
+    { id: 19, image: '🍓', revealed: false },
+    { id: 20, image: '🍑', revealed: false },
+    { id: 21, image: '🍋', revealed: false },
+    { id: 22, image: '🍈', revealed: false },
+    { id: 23, image: '🥥', revealed: false },
+    { id: 24, image: '🍐', revealed: false }
   ];
 
   firstCard: any = null;
   secondCard: any = null;
   matches = 0;
   moves = 0;
-  maxMoves = 12;
+  maxMoves = 25;
   gameOver = false;
   gameResultMessage: string = '';
 
