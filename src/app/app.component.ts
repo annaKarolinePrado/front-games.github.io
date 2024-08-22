@@ -13,6 +13,7 @@ import { FruitBoardComponent } from './home-game/jogo-da-memoria/game-board-free
 import { NegativeNumberBoardComponent } from './home-game/jogo-da-memoria/game-board-free/negative-number-board/negative-number-board.component';
 import { HandBoardComponent } from './home-game/jogo-da-memoria/game-board-free/hand-board/hand-board.component';
 import { FlowerBoardComponent } from './home-game/jogo-da-memoria/game-board-free/flower-board/flower-board.component';
+import { AvailableBoardsComponent } from './home-game/jogo-da-memoria/game-board-free/available-boards/available-boards.component';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,8 @@ import { FlowerBoardComponent } from './home-game/jogo-da-memoria/game-board-fre
             EmojisBoardComponent,
             NegativeNumberBoardComponent,
             HandBoardComponent,
-            FlowerBoardComponent ],
+            FlowerBoardComponent,
+            AvailableBoardsComponent ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

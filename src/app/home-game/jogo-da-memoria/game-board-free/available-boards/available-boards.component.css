@@ -1,0 +1,59 @@
+.free-game {
+    margin-top: 7%;
+    font-size: 1.5em;
+    color: #6600ff;
+    text-shadow: 0 0 10px #6600ff;
+    text-align: center;
+
+  }
+
+.game-selection-container {
+    margin-top: 7%;
+    height: 100vh;
+}
+  
+.card {
+    width: 40%;
+    height: 11%;
+    margin-left: 30%;
+    margin-bottom: 5%;
+    background-color: var(--menu-color);
+    border: 2px solid #6600ff; 
+    border-radius: 10px;
+    box-shadow: 0 0 5px #6600ff, 0 0 10px #6600ff, 0 0 20px #6600ff;
+    text-shadow: 0 0 15px #6600ff;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+  
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+}
+.option-game {
+    font-size: 1.3em;
+}
+  
+@media (max-width: 765px) {
+    .free-game {
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 20%;
+        font-size: 1.3em;
+      }
+    .card {
+      margin-bottom: 10%;
+      width: 70%;
+      height: 12%;
+      margin-left: 15%;
+      font-size: 0.9em;
+    }
+}

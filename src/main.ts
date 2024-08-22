@@ -15,6 +15,7 @@ import { FruitBoardComponent } from './app/home-game/jogo-da-memoria/game-board-
 import { NegativeNumberBoardComponent } from './app/home-game/jogo-da-memoria/game-board-free/negative-number-board/negative-number-board.component';
 import { HandBoardComponent } from './app/home-game/jogo-da-memoria/game-board-free/hand-board/hand-board.component';
 import { FlowerBoardComponent } from './app/home-game/jogo-da-memoria/game-board-free/flower-board/flower-board.component';
+import { AvailableBoardsComponent } from './app/home-game/jogo-da-memoria/game-board-free/available-boards/available-boards.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'home-game/jogo-da-memoria/game-board-free/negative-number-board', component: NegativeNumberBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/hand-board', component: HandBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/flower-board', component: FlowerBoardComponent },
+  { path: 'home-game/jogo-da-memoria/game-board-free/available-boards', component: AvailableBoardsComponent },
 ];
 
 bootstrapApplication(AppComponent, {

@@ -3,7 +3,7 @@
 }
 
 .information {
-    text-shadow: 0 0 5px #6600ff, 0 0 10px #6600ff, 0 0 30px #6600ff, 0 0 40px #6600ff;
+    text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc, 0 0 40px #6600cc;
     font-size: 2rem;
     margin-bottom: 6%;
     color: #f2e6ff;
@@ -22,7 +22,7 @@
 .card {
     perspective: 1000px;
     cursor: pointer;
-    width: 90px;
+    width: 100px;
     height: 90px;
     border: none;
     border-radius: 10px;
@@ -40,7 +40,7 @@
   
 .card-front, .card-back {
     position: absolute;
-    width: 90px;
+    width: 100px;
     height: 90px;
     backface-visibility: hidden;
     display: flex;
@@ -48,16 +48,16 @@
     align-items: center;
     border: none;
     border-radius: 10px;
-
+    margin-left: 0%;
 }
   
 .card-front {
-    background-color: #6600ff;
+    background-color: #6600cc;
     font-size: 1.5em;
 }
   
 .card-back {
-    background-color: #a366ff;
+    background-color: #b366ff;
     transform: rotateY(180deg);
     font-size: 2em;
 }
@@ -74,15 +74,15 @@
     font-size: 0.9em;
     cursor: pointer;
     background-color: #f2e6ff;
-    text-shadow: 0 0 5px #6600ff;
-    box-shadow: 0 0 5px #6600ff, 0 0 10px #6600ff, 0 0 20px #6600ff;
+    text-shadow: 0 0 5px #6600cc;
+    box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
     border: none;
     border-radius: 10px;
 }
   
 .board-button:hover, .button-result-message:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 5px #6600ff, 0 0 10px #6600ff, 0 0 20px #6600ff;
+    box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
 }
   
 .overlay {
@@ -97,7 +97,7 @@
     align-items: center;
     font-size: 1.3em;
     color: #f2e6ff;
-    text-shadow: 0 0 5px #6600ff, 0 0 10px #6600ff, 0 0 20px #6600ff
+    text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc
 }
   
 .overlay-content {
@@ -122,7 +122,7 @@
 @media (max-width: 765px) {
 
     .game-board {
-        grid-template-columns: repeat(3, 100px);
+        grid-template-columns: repeat(4, 80px);
     }
     .board-button, .button-result-message  {
         width: 50%;
@@ -139,6 +139,10 @@
         text-align: center;
         font-size: 1.6rem;
         margin-top: 10%;
+    }
+    .card, .card-front, .card-back {
+        width: 80px;
+        height: 70px;
     }
       
 }
