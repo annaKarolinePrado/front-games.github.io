@@ -11,6 +11,7 @@ import { JogoDaVelhaComponent } from './home-game/jogo-da-velha/jogo-da-velha.co
 import { EmojisBoardComponent } from './home-game/jogo-da-memoria/game-board-free/emojis-board/emojis-board.component';
 import { FruitBoardComponent } from './home-game/jogo-da-memoria/game-board-free/fruit-board/fruit-board.component';
 import { NegativeNumberBoardComponent } from './home-game/jogo-da-memoria/game-board-free/negative-number-board/negative-number-board.component';
+import { FlagBoardComponent } from './home-game/jogo-da-memoria/game-board-free/flag-board/flag-board.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,8 @@ import { NegativeNumberBoardComponent } from './home-game/jogo-da-memoria/game-b
             JogoDaMemoriaComponent,
             FruitBoardComponent,
             EmojisBoardComponent,
-            NegativeNumberBoardComponent ],
+            NegativeNumberBoardComponent,
+            FlagBoardComponent ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

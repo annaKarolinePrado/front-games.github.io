@@ -17,7 +17,7 @@ export class JogoDaMemoriaComponent {
   }
 
   showGameFree(): void {
-    this.router.navigate(['home-game/jogo-da-memoria/game-board-free/negative-number-board']);
+    this.router.navigate(['home-game/jogo-da-memoria/game-board-free/flag-board']);
   }
 
 }
