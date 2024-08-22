@@ -3,14 +3,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-game-board-free',
+  selector: 'app-fruit-board',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './game-board-free.component.html',
-  styleUrl: './game-board-free.component.css'
+  templateUrl: './fruit-board.component.html',
+  styleUrl: './fruit-board.component.css'
 })
-export class GameBoardFreeComponent {
-
+export class FruitBoardComponent {
   cards = [
     { id: 1, image: '🍎', revealed: false },
     { id: 2, image: '🍌', revealed: false },

@@ -8,8 +8,8 @@ import { HomeGameComponent } from './home-game/home-game.component';
 import { GameBoardComponent } from './home-game/jogo-da-velha/game-board/game-board.component';
 import { JogoDaMemoriaComponent } from './home-game/jogo-da-memoria/jogo-da-memoria.component';
 import { JogoDaVelhaComponent } from './home-game/jogo-da-velha/jogo-da-velha.component';
-import { GameBoardFreeComponent } from './home-game/jogo-da-memoria/game-board-free/game-board-free.component';
 import { Board44Component } from './home-game/jogo-da-memoria/game-board-free/board-4-4/board-4-4.component';
+import { FruitBoardComponent } from './home-game/jogo-da-memoria/game-board-free/fruit-board/fruit-board.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,7 @@ import { Board44Component } from './home-game/jogo-da-memoria/game-board-free/bo
             JogoDaVelhaComponent,
             GameBoardComponent,
             JogoDaMemoriaComponent,
-            GameBoardFreeComponent,
+            FruitBoardComponent,
             Board44Component ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
