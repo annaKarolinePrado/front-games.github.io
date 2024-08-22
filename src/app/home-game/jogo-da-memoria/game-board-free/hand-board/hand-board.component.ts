@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-flag-board',
+  selector: 'app-hand-board',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './flag-board.component.html',
-  styleUrl: './flag-board.component.css'
+  templateUrl: './hand-board.component.html',
+  styleUrl: './hand-board.component.css'
 })
-export class FlagBoardComponent {
+export class HandBoardComponent {
 
   cards = [
     { id: 1, emoji: '👍', revealed: false },  
