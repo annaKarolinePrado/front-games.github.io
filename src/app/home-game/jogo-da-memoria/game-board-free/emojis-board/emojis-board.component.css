@@ -46,7 +46,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
     border: none;
     border-radius: 10px;
     margin-left: 0%;
@@ -54,11 +53,13 @@
   
 .card-front {
     background-color: #ff0066;
+    font-size: 1.5em;
 }
   
 .card-back {
     background-color: #ff66a3;
     transform: rotateY(180deg);
+    font-size: 2em;
 }
   
 .game-controls {

@@ -3,7 +3,7 @@
 }
 
 .information {
-    text-shadow: 0 0 5px #00cc00, 0 0 10px #00cc00, 0 0 30px #00cc00, 0 0 40px #00cc00;
+    text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 30px #ffff00, 0 0 40px #ffff00;
     font-size: 2rem;
     margin-bottom: 6%;
     color: #f2e6ff;
@@ -52,12 +52,12 @@
 }
   
 .card-front {
-    background-color: #00cc00;
+    background-color: #ffff00;
     font-size: 1.5em;
 }
   
 .card-back {
-    background-color: #80ff80;
+    background-color: #ffff80;
     transform: rotateY(180deg);
     font-size: 2em;
 }
@@ -74,15 +74,15 @@
     font-size: 0.9em;
     cursor: pointer;
     background-color: #f2e6ff;
-    text-shadow: 0 0 5px #00cc00;
-    box-shadow: 0 0 5px #00cc00, 0 0 10px #00cc00, 0 0 20px #00cc00;
+    text-shadow: 0 0 5px #ffff00;
+    box-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 20px #ffff00;
     border: none;
     border-radius: 10px;
 }
   
 .board-button:hover, .button-result-message:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 5px #00cc00, 0 0 10px #00cc00, 0 0 20px #00cc00;
+    box-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 20px #ffff00;
 }
   
 .overlay {
@@ -97,7 +97,7 @@
     align-items: center;
     font-size: 1.3em;
     color: #f2e6ff;
-    text-shadow: 0 0 5px #00cc00, 0 0 10px #00cc00, 0 0 20px #00cc00
+    text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 20px #ffff00
 }
   
 .overlay-content {
