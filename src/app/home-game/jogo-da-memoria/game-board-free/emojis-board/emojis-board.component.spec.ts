@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Board44Component } from './board-4-4.component';
+import { EmojisBoardComponent } from './emojis-board.component';
 
-describe('Board44Component', () => {
-  let component: Board44Component;
-  let fixture: ComponentFixture<Board44Component>;
+describe('EmojisBoardComponent', () => {
+  let component: EmojisBoardComponent;
+  let fixture: ComponentFixture<EmojisBoardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Board44Component]
+      imports: [EmojisBoardComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(Board44Component);
+    fixture = TestBed.createComponent(EmojisBoardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

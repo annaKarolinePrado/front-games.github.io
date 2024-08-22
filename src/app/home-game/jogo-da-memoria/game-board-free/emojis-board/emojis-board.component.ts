@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-board-4-4',
+  selector: 'appemojis-board',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './board-4-4.component.html',
-  styleUrl: './board-4-4.component.css'
+  templateUrl: './emojis-board.component.html',
+  styleUrl: './emojis-board.component.css'
 })
-export class Board44Component {
+export class EmojisBoardComponent {
 
   cards = [
     { id: 1, image: '😀', revealed: false },
