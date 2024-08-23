@@ -1,0 +1,178 @@
+.img-background {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/jogo-da-forca/img-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; 
+  filter: blur(3px); 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3); /* Opcional: adiciona uma leve camada de cor sobre a imagem */
+}
+
+.simple-words-board-container {
+  position: relative; 
+  z-index: 1;
+  text-align: center;
+  margin: 10%;
+  
+}
+
+.status-jogo {
+  margin: 20px;
+  font-size: 1.3em;
+  color: black;
+  font-weight: bold;
+}
+
+.letras-erradas {
+  margin-top: 20px;
+  color: red;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.botoes-letras {
+  margin-top: 20px;
+}
+
+.button-letters {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  border-radius: 10%;
+  background-color: transparent;
+}
+
+.mensagem-fim {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: green;
+}
+
+.mensagem-fim-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+  backdrop-filter: blur(5px); /* Efeito de desfoque */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Garantir que fique por cima de outros elementos */
+}
+
+.mensagem-fim {
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  font-size: 1.6em;
+  color: black;
+  color: white;
+  text-shadow: 0 0 5px #3700b3, 0 0 10px #3700b3, 0 0 20px #3700b3, 0 0 30px #3700b3, 0 0 40px #3700b3;
+}
+
+.btn-mensagem-fim, .btn-desistir  {
+  background-color: #6200ea;
+  color: white;
+  font-size: 1em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.btn-desistir {
+  margin-top: 5%;
+  width: 20%;
+}
+
+.btn-mensagem-fim:hover {
+  background-color: #3700b3;
+  transform: scale(0.98);
+}
+
+.button-letters {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.letra-correta {
+  border: 2px solid blue;
+  border-radius: 50%;
+  padding: 10px;
+  color: blue;
+  font-weight: bold;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 20px;
+  display: inline-block;
+}
+
+.letra-errada {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.letra-errada::after {
+  content: '\\';
+  color: red;
+  font-size: 2em;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.emoji-fim {
+  font-size: 3em;
+}
+
+@media (max-width: 765px) {
+  .button-letters {
+    font-size: 1em;
+  }
+  .status-jogo, .letras-erradas {
+    font-size: 1.1em;
+  }
+  .simple-words-board-container {
+    margin: 14%;    
+  }
+  .btn-mensagem-fim {
+    font-size: 0.8em;
+  }
+  .btn-desistir{
+    width: 50%;
+    
+  }
+}

@@ -1,0 +1,43 @@
+<div class="img-background">
+  <div class="overlay"></div>
+</div>
+
+<div class="simple-words-board-container">
+
+  <div *ngIf="jogoIniciado">
+    <div class="status-jogo">
+      <p>Vidas Restantes: {{ vidasRestantes }}</p>
+      <p>{{ palavraOculta }}</p>
+    </div>
+
+    <div class="letras-erradas">
+      <p>Letras erradas: {{ letrasErradas.join(', ') }}</p>
+    </div>
+
+    <div *ngIf="!jogoTerminado">
+      <button class="button-letters" 
+              *ngFor="let letra of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')" 
+              [ngClass]="{
+                'letra-correta': letrasCorretas.includes(letra),
+                'letra-errada': letrasErradas.includes(letra)
+              }"
+              [disabled]="letrasCorretas.includes(letra) || letrasErradas.includes(letra)"
+              (click)="verificarLetra(letra)">
+        {{ letra }}
+      </button>
+    </div>
+
+    <button class="btn-desistir" (click)="goBack()">Desistir</button>
+
+    <div *ngIf="jogoTerminado" class="mensagem-fim-overlay">
+      <div class="mensagem-fim-modal">
+        <p class="mensagem-fim" *ngIf="venceu"> Parabéns, você acertou a palavra!</p>
+        <p class="emoji-fim" *ngIf="venceu">😄</p>
+        <p class="mensagem-fim" *ngIf="!venceu && vidasRestantes === 0"> Você perdeu!</p>
+        <p class="emoji-fim" *ngIf="!venceu && vidasRestantes === 0">😢</p>
+        <button class="btn-mensagem-fim" (click)="iniciarJogo()">Jogar Novamente</button>
+        <button class="btn-mensagem-fim" (click)="goBack()">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>

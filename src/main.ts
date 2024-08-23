@@ -16,6 +16,8 @@ import { NegativeNumberBoardComponent } from './app/home-game/jogo-da-memoria/ga
 import { HandBoardComponent } from './app/home-game/jogo-da-memoria/game-board-free/hand-board/hand-board.component';
 import { FlowerBoardComponent } from './app/home-game/jogo-da-memoria/game-board-free/flower-board/flower-board.component';
 import { AvailableBoardsComponent } from './app/home-game/jogo-da-memoria/game-board-free/available-boards/available-boards.component';
+import { JogoDaForcaComponent } from './app/home-game/jogo-da-forca/jogo-da-forca.component';
+import { SimpleWordsBoardComponent } from './app/home-game/jogo-da-forca/forca-board/simple-words-board/simple-words-board.component';
 
 const routes: Routes = [
   { path: '', component: HomeGameComponent },
@@ -33,6 +35,8 @@ const routes: Routes = [
   { path: 'home-game/jogo-da-memoria/game-board-free/hand-board', component: HandBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/flower-board', component: FlowerBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/available-boards', component: AvailableBoardsComponent },
+  { path: 'home-game/jogo-da-forca', component: JogoDaForcaComponent },
+  { path: 'home-game/jogo-da-forca/forca-board/simple-words-board', component: SimpleWordsBoardComponent },
   
 ];
 
