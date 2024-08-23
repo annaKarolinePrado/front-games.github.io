@@ -16,7 +16,7 @@ export class SimpleWordsBoardComponent {
   palavraSecreta: string = '';
   letrasErradas: string[] = [];
   letrasCorretas: string[] = [];
-  vidasRestantes: number = 4;
+  vidasRestantes: number = 9;
   jogoIniciado: boolean = false;
   jogoTerminado: boolean = false;
   venceu: boolean = false;
@@ -31,7 +31,7 @@ export class SimpleWordsBoardComponent {
     this.venceu = false;
     this.letrasErradas = [];
     this.letrasCorretas = [];
-    this.vidasRestantes = 4;
+    this.vidasRestantes = 9;
     this.palavraSecreta = this.sortearPalavra();
   }
 
