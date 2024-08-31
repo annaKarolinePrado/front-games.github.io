@@ -53,7 +53,7 @@ export class SimpleWordsBoardComponent {
   letrasCorretas: string[] = [];
   vidasRestantes: number = 10;
   jogoIniciado: boolean = false;
-  jogoTerminado: boolean = false;
+  gameFinished: boolean = false;
   venceu: boolean = false;
 
   poste: boolean = false;
@@ -70,19 +70,29 @@ export class SimpleWordsBoardComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.iniciarJogo(); // Inicia o jogo automaticamente ao carregar o componente
+    this.iniciarJogo(); 
   }
 
   iniciarJogo() {
     this.temaSelecionado = this.sortearTema();
     this.palavraSecreta = this.sortearPalavra(this.temaSelecionado);
     this.jogoIniciado = true;
-    this.jogoTerminado = false;
+    this.gameFinished = false;
     this.venceu = false;
     this.letrasErradas = [];
     this.letrasCorretas = [];
     this.vidasRestantes = 10;
 
+    this.poste = false;
+    this.trave = false;
+    this.corda = false;
+    this.cabeca = false;
+    this.corpo = false;
+    this.bracoEsquerdo = false;
+    this.bracoDireito = false;
+    this.pernaEsquerda = false;
+    this.pernaDireita = false;
+    this.olhos = false;
   }
 
   sortearTema(): string {
@@ -148,12 +158,12 @@ export class SimpleWordsBoardComponent {
     console.log(this.palavraSecreta)
     if (this.removerEspacos(this.palavraOculta) === this.palavraSecreta) {
       this.venceu = true;
-      this.jogoTerminado = true;
+      this.gameFinished = true;
       this.confettiColorido();
 
     } else if (this.vidasRestantes <= 0) {
-      this.jogoTerminado = true;
-      this.confettiEscuro();
+      this.gameFinished = true;
+      
     }
   }
 

@@ -1,178 +1,381 @@
+.board {
+    width: 100%;
+    margin-top: 50%;
+}
+
 .img-background {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/assets/jogo-da-forca/img-background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1; 
-  filter: blur(3px); 
+    background-image: url('/assets/jogo-da-forca/transferir5.jpg');
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1; 
+    filter: blur(3px);
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.3); /* Opcional: adiciona uma leve camada de cor sobre a imagem */
+.status-game{
+    color: #ff0066;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
 }
 
-.simple-words-board-container {
-  position: relative; 
-  z-index: 1;
-  text-align: center;
-  margin: 10%;
-  
-}
-
-.status-jogo {
-  margin: 20px;
-  font-size: 1.3em;
-  color: black;
-  font-weight: bold;
+.palavra-oculta{
+    color: #00ff00;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
 }
 
 .letras-erradas {
-  margin-top: 20px;
-  color: red;
-  font-weight: bold;
-  font-size: 1.3em;
+    color: red;
 }
 
-.botoes-letras {
-  margin-top: 20px;
+.status-game {
+    width: 100%;
 }
 
 .button-letters {
-  margin: 5px;
-  padding: 10px;
-  font-size: 1em;
-  cursor: pointer;
-  font-weight: bold;
-  border: none;
-  border-radius: 10%;
-  background-color: transparent;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0);  
+    color: white;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
 }
 
-.mensagem-fim {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 20px;
-  color: green;
+.forca {
+    width: 300px;
+    height: 250px;
+    position: absolute; 
+    top: 2%; 
+    left: 0;
+    z-index: 1000; 
+    margin-left: 17%;
+    margin-top: 8%;
+    border-radius: 50%;
 }
 
-.mensagem-fim-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
-  backdrop-filter: blur(5px); /* Efeito de desfoque */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Garantir que fique por cima de outros elementos */
+.poste {
+    width: 10px;
+    height: 150px;
+    background-color: black;
+    z-index: 1000;
 }
-
-.mensagem-fim {
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  width: 300px;
-  font-size: 1.6em;
-  color: black;
-  color: white;
-  text-shadow: 0 0 5px #3700b3, 0 0 10px #3700b3, 0 0 20px #3700b3, 0 0 30px #3700b3, 0 0 40px #3700b3;
+  
+.trave {
+    margin-bottom: 1200px;
+    position: absolute;
+    width: 200px;
+    height: 10px;
+    background-color: black;
+    z-index: 1000;
+}
+  
+.corda {
+    margin-left: 170px;
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: 1000; 
+    background-color: black;
+}
+  
+.cabeca {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: .5em;
+    border-radius: 50%;
+    margin-left: 160px;
+    margin-top: 28px;
+    width: 30px;
+    height: 30px;
+    position: absolute; 
+    z-index: 1000;
+    background-color: black;
+}
+  
+.olhos {
+    margin-left: 10px;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+    background-color: black;
+    margin-top: 8px;;
+    font-size: 0.7em;
+}
+  
+.corpo {
+    margin-left: 174px;
+    margin-top: 56px;
+    width: 6px;
+    height: 50px;
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    z-index: 1000; 
+    background-color: black;
+}
+  
+.bracoEsquerdo {
+    width: 4px;  
+    height: 35px;  
+    background-color: black;  
+    transform: rotate(45deg);  
+    position: absolute;  
+    top: 60px;  
+    left: 161px;  
+}
+  
+.bracoDireito {
+    width: 4px;  
+    height: 35px;  
+    background-color: black;  
+    transform: rotate(-45deg);  
+    position: absolute;  
+    top: 60px; 
+    left: 188px;  
+}
+  
+.pernaEsquerda {
+    width: 4px;  
+    height: 40px;  
+    background-color: black;  
+    transform: rotate(30deg);  
+    position: absolute;  
+    top: 100px;  
+    left: 165px;  
+}
+  
+.pernaDireita {
+    width: 4px; 
+    height: 40px;  
+    background-color: black;  
+    transform: rotate(-30deg); 
+    position: absolute;  
+    top: 102px;  
+    left: 187px; 
 }
 
 .btn-mensagem-fim, .btn-desistir  {
-  background-color: #6200ea;
-  color: white;
-  font-size: 1em;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  width: 70%;
-}
-
-.btn-desistir {
-  margin-top: 5%;
-  width: 20%;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 40%;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
 }
 
 .btn-mensagem-fim:hover {
-  background-color: #3700b3;
-  transform: scale(0.98);
+    background-color: #3700b3;
+    transform: scale(0.98);
+  }
+.btn-desistir {
+    margin-top: 5%;
+    width: 20%;
 }
 
-.button-letters {
-  margin: 5px;
-  padding: 10px;
-  font-size: 1em;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.letra-correta {
-  border: 2px solid blue;
-  border-radius: 50%;
-  padding: 10px;
-  color: blue;
-  font-weight: bold;
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  line-height: 20px;
-  display: inline-block;
-}
-
-.letra-errada {
-  color: red;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-  position: relative;
-}
-
-.letra-errada::after {
-  content: '\\';
-  color: red;
-  font-size: 2em;
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
+.mensagem-fim {
+    margin-bottom: 10%;
+    text-shadow: 0 0 10px #3700b3, 0 0 20px #3700b3, 0 0 30px #3700b3;
 }
 
 .emoji-fim {
-  font-size: 3em;
+    font-size: 3em;
 }
 
-@media (max-width: 765px) {
-  .button-letters {
-    font-size: 1em;
-  }
-  .status-jogo, .letras-erradas {
-    font-size: 1.1em;
-  }
-  .simple-words-board-container {
-    margin: 14%;    
-  }
-  .btn-mensagem-fim {
-    font-size: 0.8em;
-  }
-  .btn-desistir{
-    width: 50%;
-    
-  }
+.mensagem-fim-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  
+    backdrop-filter: blur(5px);  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  
+    color: white;
 }
+
+.btn-mensagem-fim {
+    width: 100%;
+}
+
+.mensagem {
+    margin-bottom: 20%;
+}
+
+.letra-correta {
+    border: 2px solid #00ff00;
+    border-radius: 50%;
+    padding: 10px;
+    color: #00ff00;
+    font-weight: bold;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 20px;
+    display: inline-block;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
+}
+  
+.letra-errada {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
+}
+
+.letra-errada::after {
+    content: '\\';
+    color: red;
+    font-size: 1.1em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+    /* Estilos para telas com largura entre 360px e 768px 
+
+    .keyboard {
+        width: 100%;
+    }
+
+    .forca {
+        width: 100px;
+        height: 70px;
+        margin-left: 5%; 
+        margin-top: 28%;
+    }
+    .poste {
+        width: 6px;
+        height: 80px;
+    }
+    .trave {
+        width: 140px;
+        height: 6px;
+        margin-bottom: 625px; 
+    }
+    .corda {
+        width: 6px;
+        height: 40px;
+        margin-left: 115px;
+    }
+    .cabeca {
+        width: 40px;
+        height: 40px;
+        margin-top: 40px;
+        margin-left: 100px;
+    }
+    .corpo {
+        width: 5px;
+        height: 40px;
+        margin-top: 80px;
+        margin-left: 118px;
+    }
+    .bracoEsquerdo {
+        width: 3px;
+        height: 30px;
+        top: 80px;
+        left: 109px;
+    }
+    .bracoDireito {
+        width: 3px;
+        height: 30px;
+        top: 80px;
+        left: 129px;
+    }
+    .pernaEsquerda {
+        width: 4px;
+        height: 35px;
+        top: 116px;
+        left: 110px;
+    }
+    .pernaDireita {
+        width: 4px;
+        height: 35px;
+        top: 116px;
+        left: 127px;
+    }*/
+}
+
+@media (min-width: 1024px) {
+   .board{
+        margin-top: 20%;
+   }
+
+   .forca {
+        margin-top: 8%;
+    }
+
+    .poste {
+        height:250px;
+    }
+  
+    .trave {        
+        width: 200px;        
+    }
+  
+    .corda {
+        height: 50px;       
+    }
+  
+    .cabeca {       
+        font-size: .7em;      
+        margin-left: 150px;
+        margin-top: 50px;
+        width: 50px;
+        height: 50px;      
+    }
+  
+    .olhos {
+        margin-top: 10px;;
+    }
+  
+    .corpo {
+        margin-left: 176px;
+        margin-top: 99px;        
+    }
+  
+    .bracoEsquerdo {
+        width: 4px;  
+        height: 40px;        
+        top: 95px;  
+    }
+  
+    .bracoDireito {
+        width: 4px;  
+        height: 40px;    
+        top: 95px; 
+        left: 193px;  
+    }
+  
+    .pernaEsquerda {
+        width: 5px;  
+        height: 40px; 
+        top: 145px;  
+    }
+  
+    .pernaDireita {
+        width: 5px; 
+        height: 40px; 
+        top: 145px;  
+    }
+}
+
+    
