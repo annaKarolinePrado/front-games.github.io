@@ -257,7 +257,7 @@
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
 }
 
-@media (min-width: 360px) and (max-width: 768px) {
+@media (max-width: 768px) {
     .keyboard {
         width: 80%;
         margin-left: 10%;
