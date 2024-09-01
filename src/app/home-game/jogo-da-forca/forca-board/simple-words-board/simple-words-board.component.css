@@ -181,6 +181,7 @@
     margin-bottom: 20px;
     width: 40%;
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
+    box-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black;
 }
 
 .btn-mensagem-fim:hover {
