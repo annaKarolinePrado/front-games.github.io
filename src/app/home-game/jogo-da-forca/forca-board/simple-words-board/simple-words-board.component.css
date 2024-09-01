@@ -257,10 +257,10 @@
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .keyboard {
-        width: 80%;
-        margin-left: 10%;
+        width: 90%;
+        margin-left: 5%;
     }
 }
 
@@ -294,7 +294,7 @@
     }
   
     .olhos {
-        margin-top: 10px;;
+        margin-top: 10px;
     }
   
     .corpo {
