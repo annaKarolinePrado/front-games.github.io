@@ -258,7 +258,7 @@
 }
 
 @media (min-width: 360px) and (max-width: 768px) {
-    .keyboard {
+     .keyboard {
         width: 80%;
         margin-left: 10%;
     }
@@ -356,7 +356,7 @@
     }
   
     .olhos {
-        margin-top: 10px;
+        margin-top: 10px;;
     }
   
     .corpo {
