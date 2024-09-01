@@ -41,10 +41,17 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: bold;
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: rgba(0, 0, 0, 0);  
     color: white;
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
+}
+
+.keyboard {
+    width: 60%;
+    margin-left: 20%;
 }
 
 .forca {
@@ -174,6 +181,7 @@
     margin-bottom: 20px;
     width: 40%;
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
+    box-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black;
 }
 
 .btn-mensagem-fim:hover {
@@ -249,7 +257,76 @@
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
 }
 
+@media (min-width: 1024px) {
+    .board{
+         margin-top: 20%;
+    }
+ 
+    .forca {
+         margin-top: 8%;
+    }
+ 
+    .poste {
+        height:250px;
+    }
+
+    .trave {        
+        width: 200px;        
+    }
+
+    .corda {
+        height: 50px;       
+    }
+
+    .cabeca {       
+        font-size: .7em;      
+        margin-left: 150px;
+        margin-top: 50px;
+        width: 50px;
+        height: 50px;      
+    }
+
+    .olhos {
+        margin-top: 10px;
+    }
+   
+    .corpo {
+        margin-left: 176px;
+        margin-top: 99px;        
+    }
+   
+    .bracoEsquerdo {
+        width: 4px;  
+        height: 40px;        
+        top: 95px;  
+    }
+   
+    .bracoDireito {
+        width: 4px;  
+        height: 40px;    
+        top: 95px; 
+        left: 193px;  
+    }
+   
+    .pernaEsquerda {
+        width: 5px;  
+        height: 40px; 
+        top: 145px;  
+    }
+
+    .pernaDireita {
+        width: 5px; 
+        height: 40px; 
+        top: 145px;  
+    }
+}
+
 @media (min-width: 360px) and (max-width: 768px) {
+
+    .keyboard {
+        width: 80%;
+        margin-left: 10%;
+    }
     /* Estilos para telas com largura entre 360px e 768px 
 
     .keyboard {
@@ -314,68 +391,6 @@
     }*/
 }
 
-@media (min-width: 1024px) {
-   .board{
-        margin-top: 20%;
-   }
 
-   .forca {
-        margin-top: 8%;
-    }
-
-    .poste {
-        height:250px;
-    }
-  
-    .trave {        
-        width: 200px;        
-    }
-  
-    .corda {
-        height: 50px;       
-    }
-  
-    .cabeca {       
-        font-size: .7em;      
-        margin-left: 150px;
-        margin-top: 50px;
-        width: 50px;
-        height: 50px;      
-    }
-  
-    .olhos {
-        margin-top: 10px;;
-    }
-  
-    .corpo {
-        margin-left: 176px;
-        margin-top: 99px;        
-    }
-  
-    .bracoEsquerdo {
-        width: 4px;  
-        height: 40px;        
-        top: 95px;  
-    }
-  
-    .bracoDireito {
-        width: 4px;  
-        height: 40px;    
-        top: 95px; 
-        left: 193px;  
-    }
-  
-    .pernaEsquerda {
-        width: 5px;  
-        height: 40px; 
-        top: 145px;  
-    }
-  
-    .pernaDireita {
-        width: 5px; 
-        height: 40px; 
-        top: 145px;  
-    }
-}
 
     
