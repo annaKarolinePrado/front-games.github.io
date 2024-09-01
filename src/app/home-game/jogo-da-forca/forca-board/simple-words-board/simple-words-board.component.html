@@ -32,7 +32,7 @@
     <div class="keyboard">
         <div *ngIf="!gameFinished">
             <button class="button-letters" 
-                    *ngFor="let letra of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')" 
+                    *ngFor="let letra of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ-'.split('')" 
                     [ngClass]="{'letra-correta': letrasCorretas.includes(letra),'letra-errada': letrasErradas.includes(letra)}"
                     [disabled]="letrasCorretas.includes(letra) || letrasErradas.includes(letra)" 
                     (click)="verificarLetra(letra)">

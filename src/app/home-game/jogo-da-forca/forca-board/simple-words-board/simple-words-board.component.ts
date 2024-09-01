@@ -6,7 +6,7 @@ import confetti from 'canvas-confetti';
 interface Temas {
   [key: string]: string[];
 }
-
+/*
 const temas: Temas = {
   'Mix': ['CASA', 'CARRO', 'MESA', 'LIVRO', 'ESCOLA', 'PORTA', 'JANELA', 'RUA', 'ÁRVORE', 'CAMA', 'QUARTO', 'COZINHA', 'BANHEIRO', 'SOFÁ', 'ESCRITÓRIO', 'TELEVISÃO', 'LÂMPADA', 'PRATO', 'TALHER', 'CADEIRA', 'GELADEIRA', 'FOGÃO', 'MICROONDAS', 'VENTILADOR', 'AR-CONDICIONADO', 'PISCINA', 'GARAGEM', 'JARDIM', 'TELHADO', 'CHÃO', 'PAREDE', 'TETO', 'ESCADA', 'CORREDOR', 'VARANDA', 'SALA', 'LAREIRA', 'QUINTAL', 'PORTÃO', 'CERCA', 'CHAVE', 'FECHADURA', 'INTERRUPTOR', 'TOMADA', 'LUSTRE', 'CORTINA', 'PERSIANA', 'ESPELHO', 'QUADRO', 'RELÓGIO', 'VASO', 'FLORES', 'PLANTA', 'ESTANTE', 'ARMÁRIO', 'GAVETA', 'COBERTOR', 'TRAVESSEIRO', 'LENÇOL', 'TOALHA', 'SABONETE', 'SHAMPOO', 'CONDICIONADOR', 'ESCOVA', 'PASTA', 'CREME', 'PENTE', 'SECADOR', 'CHUVEIRO', 'BANHEIRA', 'SANITÁRIO', 'PIA', 'TORNEIRA', 'ESGOTO', 'LIXEIRA', 'BALDE', 'VASSOURA', 'RODO', 'PANO', 'DETERGENTE', 'ABATJUR', 'TAPETE', 'MOLDURA', 'ALMOFADA', 'CESTO', 'FRUTEIRA', 'LIXEIRA', 'ESCORREDOR', 'FACA', 'GARFO', 'COLHER', 'XÍCARA', 'COPO', 'JARRA', 'PANELA', 'FRIGIDEIRA', 'ESPÁTULA', 'CONCHA', 'RALADOR', 'ABRIDOR', 'SACA-ROLHAS', 'DESCASCADOR', 'BATEDEIRA', 'LIQUIDIFICADOR', 'TORRADEIRA', 'CAFETEIRA', 'CHALEIRA', 'PANELA DE PRESSÃO', 'ESCUMADEIRA', 'PINÇA', 'TESOURA', 'PINCEL', 'ROLO', 'ESPONJA', 'ESCORREDOR', 'PENEIRA', 'FUNIL', 'MEDIDOR', 'BALANÇA', 'TERMÔMETRO', 'TIMER', 'DESCANSO', 'TRAVESSA', 'TIGELA', 'BOWL', 'PRATO DE SOBREMESA', 'PRATO FUNDO', 'PRATO RASO', 'SOPEIRA', 'MOLHEIRA', 'SALADEIRA', 'FRUTEIRA', 'QUEIJEIRA', 'MANTEIGUEIRA', 'AÇUCAREIRO', 'SALEIRO', 'PIMENTEIRO', 'PALITEIRO', 'GALHETEIRO', 'JOGO AMERICANO', 'TOALHA DE MESA', 'GUARDANAPO', 'PORTA-GUARDANAPO', 'PORTA-COPOS', 'PORTA-PRATOS', 'PORTA-TALHERES', 'PORTA-PÃO', 'PORTA-QUEIJO', 'PORTA-MANTEIGA', 'PORTA-AÇÚCAR'],
   'Animais': ['CACHORRO', 'ELEFANTE', 'GIRAFA', 'BORBOLETA', 'LEOPARDO', 'TIGRE', 'BALEIA', 'PINGUIM', 'JACARÉ', 'PAPAGAIO', 'GATO', 'CAVALO', 'COELHO', 'TARTARUGA', 'URSO', 'ONÇA', 'VEADO', 'RAPOSA', 'MACACO', 'MORCEGO', 'LEÃO', 'ZEBRA', 'HIPOPÓTAMO', 'RINOCERONTE', 'CANGURU', 'KOALA', 'PANDA', 'GORILA', 'CHIMPANZÉ', 'ORANGOTANGO', 'LOBO', 'RATO', 'RAPOSA', 'ESQUILO', 'CASTOR', 'GAMBA', 'TAMANDUÁ', 'PREGUIÇA', 'TATU', 'CAPIVARA', 'ANTA', 'JAVALI', 'PORCO', 'VACA', 'BOI', 'TOURO', 'CABRA', 'OVELHA', 'CARNEIRO', 'BURRO', 'MULA', 'JUMENTO', 'GALINHA', 'GALO', 'PATO', 'MARRECO', 'GANSO', 'PERU', 'CODORNA', 'AVESTRUZ', 'EMA', 'CISNE', 'FLAMINGO', 'PAVÃO', 'CORUJA', 'FALCÃO', 'ÁGUIA', 'CONDOR', 'URUBU', 'GAIVOTA', 'POMBO', 'ANDORINHA', 'CANÁRIO', 'PERIQUITO', 'CALOPSITA', 'ARARA', 'TUCANO', 'PICA-PAU', 'BEIJA-FLOR', 'PARDAL', 'ROUXINOL', 'SABIÁ', 'BEM-TE-VI', 'ABELHA', 'FORMIGA', 'BESOURO', 'BORBOLETA', 'GRILO', 'LAGARTA', 'LAGARTIXA', 'LAGARTO', 'COBRA', 'JARARACA', 'SUCURI', 'ANACONDA', 'ESCORPIÃO', 'ARANHA', 'CARANGUEJO', 'LAGOSTA', 'CAMARÃO', 'PEIXE', 'TUBARÃO', 'BALEIA', 'GOLFINHO', 'POLVO', 'LULA', 'ESTRELA-DO-MAR', 'CAVALO-MARINHO', 'MEDUSA', 'PINGUIM', 'FOCAS', 'LEÃO-MARINHO', 'MORSAS', 'TARTARUGA-MARINHA', 'PEIXE-BOI', 'LONTRA', 'CASTOR', 'RATO', 'RATAZANA', 'HAMSTER', 'PORQUINHO-DA-ÍNDIA', 'COELHO', 'LEBRE', 'CANGURU', 'KOALA', 'PANDAS', 'GORILA', 'CHIMPANZÉ', 'ORANGOTANGO', 'MACACO', 'MICO', 'SAGUI', 'TAMANDUÁ', 'PREGUIÇA', 'TATU', 'CAPIVARA', 'ANTA', 'JAVALI', 'PORCO', 'VACA', 'BOI', 'TOURO', 'CABRA', 'OVELHA', 'CARNEIRO', 'BURRO', 'MULA', 'JUMENTO', 'GALINHA', 'GALO'],
@@ -34,7 +34,10 @@ const temas: Temas = {
   'Astrologia': ['ÁRIES', 'TOURO', 'GÊMEOS', 'CÂNCER', 'LEÃO', 'VIRGEM', 'LIBRA', 'ESCORPIÃO', 'SAGITÁRIO', 'CAPRICÓRNIO','AQUÁRIO', 'PEIXES', 'SOL', 'LUAS', 'ASCENDENTE', 'MERÚRCIO', 'VÊNUS', 'MARTE', 'JÚPITER', 'SATURNO','URANO', 'NETUNO', 'PLUTÃO', 'HÉRCULES', 'ZODÍACO', 'CÉU', 'NATAL', 'MAPA', 'HOUSES', 'QUADRANTE','ECLIPSE', 'ASTROLOGIA', 'COSMO', 'TRANSITOS', 'ASTROS', 'RETA', 'VIRGEM', 'INFLUÊNCIA', 'ANÁLISE','ORBIS', 'RETO', 'LUMINAR', 'MEDITAÇÃO', 'RETROGRADO', 'SOMBRA', 'LUZ', 'CIRCULO', 'CASIMIRA', 'ORBÍTAL','CARTAS', 'DEGRAUS', 'ELEMENTOS', 'ÁGUA', 'FOGO', 'TERRA', 'AR', 'QUADRADO', 'TRÍGONO', 'SEXTIL', 'OPOSIÇÃO','CONJUNÇÃO', 'DECANO', 'CASA', 'SIGNO', 'PLANETA', 'ESTRELA', 'ZONAS', 'EXILIO', 'DOMICILIO', 'DECADAS','SINTONIA', 'CICLO', 'LUNAR', 'ESPÍRITO', 'ELEMOS', 'SOLAR', 'TRÍGONO', 'PONTOS', 'RESGATE', 'TERRA','NATALIDADE', 'SOLAR', 'LUNAR', 'FATALIDADE', 'MOVIMENTOS', 'PLANETAS', 'LUZ', 'SOMBRA', 'PROGRESSIVO','SATURNO', 'TRANSPESSO', 'REGRESSIVO', 'CARTAS', 'MAPAS', 'SIGNOS', 'DOMÍNIOS', 'HARMONIA', 'TENDÊNCIAS','INTERPRETAÇÃO', 'ORBITAL', 'PONTO', 'ÁREA', 'GRAUS', 'SOLAR', 'TERRESTRE', 'TAROT', 'ZODIACAL', 'POSIÇÃO','NÓS', 'ASCENDENTES', 'ESTADOS', 'SIGNIFICADO', 'ÁRIE', 'MARTE', 'VÊNUS', 'JÚPITER', 'URANO', 'NETUNO', 'PLUTÃO'],
   'Ações': ['CORRER', 'PULAR', 'ANDAR', 'VOAR', 'NADAR', 'ESCREVER', 'LER', 'FALAR', 'COMER', 'BEBER','DORMIR', 'ESTUDAR', 'TRABALHAR', 'JOGAR', 'DIRIGIR', 'DESENHAR', 'CANTAR', 'DANÇAR', 'COZINHAR', 'LIMPAR','PINTAR', 'OUVIR', 'ESCUTAR', 'ABRIR', 'FECHAR', 'VESTIR', 'DESVESTIR', 'CONVERSAR', 'APRENDER', 'ENSINAR','ENCONTRAR', 'PERDER', 'CUIDAR', 'ENVIAR', 'RECEBER', 'FESTEJAR', 'GAMBAR', 'RIR', 'CHORAR', 'SORRIR','BRINCAR', 'VIAJAR', 'CONHECER', 'VISITAR', 'PESQUISAR', 'COMPRAR', 'VENDER', 'NEGOCIAR', 'PROCURAR', 'PEGAR','LANÇAR', 'ATIRAR', 'EMPURRAR', 'PUXAR', 'ABRAÇAR', 'BEIJAR', 'CUIDAR', 'RELAXAR', 'RELAJAR', 'INICIAR','PAUSAR', 'CONTINUAR', 'DESAFIAR', 'CUPIR', 'ENFRENTAR', 'ANALISAR', 'DECIDIR', 'PERGUNTAR', 'RESPONDER', 'DESEJAR','VISUALIZAR', 'VER', 'SENTIR', 'EXPLODIR', 'ESCALAR', 'EXERCITAR', 'MEDITAR', 'DEMONSTRAR', 'CONSTRUIR', 'DESTRUIR','APERTAR', 'SOLTAR', 'CALCULAR', 'DIVIDIR', 'MULTIPLICAR', 'SOMAR', 'RECONHECER', 'HABILITAR', 'DESABILITAR', 'ORGANIZAR','SUPORTAR', 'ABOLIR', 'MODIFICAR', 'PERSUADIR', 'DEBATER', 'FOTOGRAFAR', 'GRAVAR', 'RETIRAR', 'CONTRAIR', 'MODIFICAR','GASTAR', 'ECONOMIZAR', 'PRATICAR', 'REALIZAR', 'ACREDITAR', 'NEGAR', 'AVALIAR', 'DESAFIAR', 'AMPLIAR', 'REDUZIR','APROVAR', 'DISCORDAR', 'APROPRIAR', 'DEVIDAR', 'COMUNICAR', 'DEFENDER', 'ABRIR', 'ENCERRAR', 'CUMPRIR', 'DECLARAR','AUTORIZAR', 'FECHAR', 'EXECUTAR', 'RECONHECER', 'FESTIVAL'],
   'Objetos': ['CADERNO', 'LÁPIS', 'CANETA', 'MOUSE', 'TECLADO', 'COMPUTADOR', 'CELULAR', 'TV', 'FRIGORÍFICO', 'CADEIRA','MESA', 'SOFÁ', 'LÂMPADA', 'TELHA', 'JANELA', 'PORTA', 'LIVRO', 'RELOJ', 'GARRAFA', 'TAÇA','PRATO', 'GARFO', 'COLHER', 'FACAS', 'POTES', 'PANELA', 'TIGELA', 'MANTEL', 'TAPETE', 'ALMOFADA','ROUPA', 'CALÇA', 'CAMISA', 'SAPATO', 'TENIS', 'CHINELO', 'BONÉ', 'ÓCULOS', 'ANEL', 'BRACELETE','COLAR', 'BRINCO', 'CINTA', 'CINTO', 'CHAVE', 'BOLSA', 'MOCHILA', 'CARTEIRA', 'REDE', 'MANTA','TRAVESSEIRO', 'LENÇOL', 'TOALHA', 'DESENHO', 'ESTANTE', 'LIVRARIA', 'QUADRO', 'FOTOGRAFIA', 'ESPELHO', 'RACK','DECORAR', 'PAREDE', 'CARTAZ', 'RELÓGIO', 'CD', 'DVD', 'BLU-RAY', 'FONES', 'ALTO-FALANTE', 'MICROFONE','TELEVISÃO', 'ESTANTE', 'ARMÁRIO', 'GAVETA', 'CABIDE', 'ROUPA', 'SAIA', 'VESTIDO', 'SHORTS', 'CAMISETA','CUPCAKE', 'PIROCA', 'SANDÁLIA', 'CHAVEIRO', 'RELÓGIO', 'GLOBO', 'BRISA', 'CAPA', 'CANECAS', 'ESFEROGRÁFICA','LIVRO', 'CADERNO', 'MOUSEPAD', 'CANETA', 'LANTERNA', 'FÓSFORO', 'CAIXA', 'BARRA', 'PORTA-RETRATO', 'ENVELOPE','INSTRUMENTO', 'COLCHA', 'ALMOFADA', 'FOTOCÓPIA', 'TELA', 'MÓVEL', 'TROFÉU', 'APARELHO', 'TELA', 'CADEIRA'],
-};
+};*/
+const temas: Temas = {
+    'Mix': ['FESTIVAL DE DANÇA URBANA']
+}
 
 
 
@@ -107,6 +110,7 @@ export class SimpleWordsBoardComponent {
 
   verificarLetra(letra: string) {
     letra = letra.toUpperCase();
+    this.palavraSecreta = this.removerAcentos(this.palavraSecreta);
     if (this.palavraSecreta.includes(letra)) {
       if (!this.letrasCorretas.includes(letra)) {
         this.letrasCorretas.push(letra);
@@ -156,7 +160,7 @@ export class SimpleWordsBoardComponent {
 
   verificarFimDeJogo() {
     console.log(this.palavraSecreta)
-    if (this.removerEspacos(this.palavraOculta) === this.palavraSecreta) {
+    if (this.removerEspacosTracos(this.palavraOculta) == this.removerEspacosTracos(this.palavraSecreta)) {
       this.venceu = true;
       this.gameFinished = true;
       this.confettiColorido();
@@ -198,7 +202,27 @@ export class SimpleWordsBoardComponent {
     this.router.navigate(['']);
   }
 
-  removerEspacos(palavraOculta: string): string {
-    return palavraOculta.replace(/\s+/g, '');
+  removerEspacosTracos(palavraOculta: string): string {
+    palavraOculta = palavraOculta.replace(/\s+/g, '');
+    return palavraOculta.replaceAll('_', '');
   }
+
+    removerAcentos(palavra: string): string {
+        const mapaAcentos: { [chave: string]: string } = {
+        'Á': 'A', 'À': 'A', 'Ã': 'A', 'Â': 'A', 'Ä': 'A',
+        'É': 'E', 'È': 'E', 'Ê': 'E', 'Ë': 'E',
+        'Í': 'I', 'Ì': 'I', 'Î': 'I', 'Ï': 'I',
+        'Ó': 'O', 'Ò': 'O', 'Õ': 'O', 'Ô': 'O', 'Ö': 'O',
+        'Ú': 'U', 'Ù': 'U', 'Û': 'U', 'Ü': 'U',
+        'Ç': 'C',
+        'á': 'a', 'à': 'a', 'ã': 'a', 'â': 'a', 'ä': 'a',
+        'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e',
+        'í': 'i', 'ì': 'i', 'î': 'i', 'ï': 'i',
+        'ó': 'o', 'ò': 'o', 'õ': 'o', 'ô': 'o', 'ö': 'o',
+        'ú': 'u', 'ù': 'u', 'û': 'u', 'ü': 'u',
+        'ç': 'c'
+        };
+    
+        return palavra.split('').map(letra => mapaAcentos[letra] || letra).join('');
+    }
 }
