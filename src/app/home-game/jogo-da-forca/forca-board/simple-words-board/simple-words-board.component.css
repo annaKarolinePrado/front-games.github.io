@@ -35,6 +35,11 @@
     width: 100%;
 }
 
+.keyboard {
+    width: 60%;
+    margin-left: 20%;
+}
+
 .button-letters {
     margin: 5px;
     padding: 10px;
