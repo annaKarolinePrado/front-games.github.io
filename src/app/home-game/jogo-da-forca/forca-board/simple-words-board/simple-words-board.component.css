@@ -257,13 +257,14 @@
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black, 0 0 25px black;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .keyboard {
         width: 90%;
         margin-left: 5%;
     }
 }
 
+/*
 @media (min-width: 1024px) {
    .board{
         margin-top: 20%;
@@ -327,5 +328,6 @@
         top: 145px;  
     }
 }
+    */
 
     
