@@ -36,7 +36,6 @@ const temas: Temas = {
   'Objetos': ['CADERNO', 'LÁPIS', 'CANETA', 'MOUSE', 'TECLADO', 'COMPUTADOR', 'CELULAR', 'TV', 'FRIGORÍFICO', 'CADEIRA','MESA', 'SOFÁ', 'LÂMPADA', 'TELHA', 'JANELA', 'PORTA', 'LIVRO', 'RELOJ', 'GARRAFA', 'TAÇA','PRATO', 'GARFO', 'COLHER', 'FACAS', 'POTES', 'PANELA', 'TIGELA', 'MANTEL', 'TAPETE', 'ALMOFADA','ROUPA', 'CALÇA', 'CAMISA', 'SAPATO', 'TENIS', 'CHINELO', 'BONÉ', 'ÓCULOS', 'ANEL', 'BRACELETE','COLAR', 'BRINCO', 'CINTA', 'CINTO', 'CHAVE', 'BOLSA', 'MOCHILA', 'CARTEIRA', 'REDE', 'MANTA','TRAVESSEIRO', 'LENÇOL', 'TOALHA', 'DESENHO', 'ESTANTE', 'LIVRARIA', 'QUADRO', 'FOTOGRAFIA', 'ESPELHO', 'RACK','DECORAR', 'PAREDE', 'CARTAZ', 'RELÓGIO', 'CD', 'DVD', 'BLU-RAY', 'FONES', 'ALTO-FALANTE', 'MICROFONE','TELEVISÃO', 'ESTANTE', 'ARMÁRIO', 'GAVETA', 'CABIDE', 'ROUPA', 'SAIA', 'VESTIDO', 'SHORTS', 'CAMISETA','CUPCAKE', 'PIROCA', 'SANDÁLIA', 'CHAVEIRO', 'RELÓGIO', 'GLOBO', 'BRISA', 'CAPA', 'CANECAS', 'ESFEROGRÁFICA','LIVRO', 'CADERNO', 'MOUSEPAD', 'CANETA', 'LANTERNA', 'FÓSFORO', 'CAIXA', 'BARRA', 'PORTA-RETRATO', 'ENVELOPE','INSTRUMENTO', 'COLCHA', 'ALMOFADA', 'FOTOCÓPIA', 'TELA', 'MÓVEL', 'TROFÉU', 'APARELHO', 'TELA', 'CADEIRA'],
 };
 
-
 @Component({
   selector: 'app-simple-words-board',
   standalone: true,
@@ -69,12 +68,55 @@ export class SimpleWordsBoardComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.iniciarJogo(); 
+    // Iniciar com uma palavra aleatória
+    this.iniciarJogoAleatorio();
+  }
+
+  classificarPalavraPorNivel(palavra: string): string {
+    const tamanho = palavra.length;
+    if (tamanho <= 4) {
+      return 'Fácil';
+    } else if (tamanho >= 5 && tamanho <= 7) {
+      return 'Médio';
+    } else {
+      return 'Difícil';
+    }
+  }
+
+  iniciarJogoFacil() {
+    this.iniciarJogoPorNivel('Fácil');
+  }
+
+  iniciarJogoMedio() {
+    this.iniciarJogoPorNivel('Médio');
+  }
+
+  iniciarJogoDificil() {
+    this.iniciarJogoPorNivel('Difícil');
+  }
+
+  iniciarJogoAleatorio() {
+    this.iniciarJogo();
+  }
+
+  iniciarJogoPorNivel(nivel: string) {
+    this.temaSelecionado = this.sortearTema();
+    const palavrasNivel = this.obterPalavrasPorNivel(this.temaSelecionado, nivel);
+    if (palavrasNivel.length > 0) {
+      this.palavraSecreta = palavrasNivel[Math.floor(Math.random() * palavrasNivel.length)];
+      this.iniciarNovoJogo();
+    } else {
+      console.error(`Nenhuma palavra encontrada para o nível ${nivel}`);
+    }
   }
 
   iniciarJogo() {
     this.temaSelecionado = this.sortearTema();
     this.palavraSecreta = this.sortearPalavra(this.temaSelecionado);
+    this.iniciarNovoJogo();
+  }
+
+  iniciarNovoJogo() {
     this.jogoIniciado = true;
     this.gameFinished = false;
     this.venceu = false;
@@ -82,6 +124,7 @@ export class SimpleWordsBoardComponent {
     this.letrasCorretas = [];
     this.vidasRestantes = 10;
 
+    // Resetar o boneco
     this.poste = false;
     this.trave = false;
     this.corda = false;
@@ -92,6 +135,11 @@ export class SimpleWordsBoardComponent {
     this.pernaEsquerda = false;
     this.pernaDireita = false;
     this.olhos = false;
+  }
+
+  obterPalavrasPorNivel(tema: string, nivel: string): string[] {
+    const palavras = temas[tema];
+    return palavras.filter(palavra => this.classificarPalavraPorNivel(palavra) === nivel);
   }
 
   sortearTema(): string {
@@ -157,6 +205,7 @@ export class SimpleWordsBoardComponent {
   verificarFimDeJogo() {
     console.log(this.palavraSecreta)
     if (this.removerEspacosTracos(this.palavraOculta) == this.removerEspacosTracos(this.palavraSecreta)) {
+      this.confettiColorido();
       this.venceu = true;
       this.gameFinished = true;
       this.confettiColorido();

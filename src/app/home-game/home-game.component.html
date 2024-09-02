@@ -1,70 +1,57 @@
 <div class="div-games">
-    <section id="home">
-      <h1 class="welcome-message">Escolha seu jogo e divirta-se! <br>A nostalgia está só começando.</h1>
-    </section>
-    <section id="projects">
+  <section id="home">
+      <h1 class="welcome-message">
+          Escolha seu jogo e divirta-se! <br />
+          A nostalgia está só começando.
+      </h1>
+  </section>
+  <section id="projects">
       <div class="project-grid">
-        <div class="project-card" (click)="navigateTo('home-game/jogo-da-velha')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Jogo da Velha</h3>
-            </div>
-            <div class="card-back">
-              <p><a class="nav-link" >Reviva a diversão intemporal do jogo da velha neste clássico desafiador.</a></p>
-            </div>
+          <div class="project-card" (click)="navigateTo('home-game/jogo-da-velha')">
+              <div class="card-inner">
+                  <div class="card-front">
+                      <div class="img-background"></div>
+                      <h3 class="jogo-da-velha">Jogo da Velha</h3>
+                  </div>
+                  <div class="card-back">
+                      <p><a class="nav-link">Reviva a diversão intemporal do jogo da velha neste clássico desafiador.</a></p>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="project-card" (click)="navigateTo('home-game/jogo-da-memoria')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Jogo da Memória</h3>
-            </div>
-            <div class="card-back">
-              <p><a class="nav-link">Desafie sua mente com o jogo clássico de memória e concentração.</a></p>
-            </div>
+          <div class="project-card" (click)="navigateTo('home-game/jogo-da-memoria')">
+              <div class="card-inner">
+                  <div class="card-front">
+                      <div class="logo-jogo-da-memoria"></div>
+                      <h3 class="jogo-da-memoria">Jogo da Memória</h3>
+                  </div>
+                  <div class="card-back">
+                      <p><a class="nav-link">Desafie sua mente com o jogo clássico de memória e concentração.</a></p>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="project-card" (click)="navigateTo('home-game/jogo-da-forca')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Jogo da Forca</h3>
-            </div>
-            <div class="card-back">
-              <p><a class="nav-link" >Adivinhe uma palavra antes que uma forca seja completada.</a></p>
-            </div>
+          <div class="project-card" (click)="navigateTo('home-game/jogo-da-forca')">
+              <div class="card-inner">
+                  <div class="card-front">
+                    <div class="logo-jogo-da-forca"></div>
+                    <h3 class="jogo-da-forca">Jogo da Forca</h3>
+                  </div>
+                  <div class="card-back">
+                      <p><a class="nav-link">Adivinhe uma palavra antes que uma forca seja completada.</a></p>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="project-card" (click)="navigateTo(' ')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Jogo das Cores</h3>
-            </div>
-            <div class="card-back">
-              <p>Descubra uma sequência de cores em um número limitado de tentativas.</p>
-            </div>
+          <div class="project-card cadiado" (click)="navigateTo(' ')">
+              <div class="card-inner">
+                  <div class="card-front">
+                    <div class="logo-cadiado"></div>
+                    <h3 class="cadiado"></h3>
+                  </div>
+                  <div class="card-back">
+                      <p></p>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="project-card" (click)="navigateTo(' ')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Jogo de Cartas</h3>
-            </div>
-            <div class="card-back">
-              <p>Chegue o mais perto possível de 21 sem ultrapassar.</p>
-            </div>
-          </div>
-        </div>
-        <div class="project-card" (click)="navigateTo(' ')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Jogo de Labirinto</h3>
-            </div>
-            <div class="card-back">
-              <p>Encontre a saída movendo-se através de um labirinto, evitando obstáculos.</p>
-            </div>
-          </div>
-        </div>
+         
       </div>
-    </section>
-  </div>
-  
+  </section>
+</div>
