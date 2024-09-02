@@ -88,4 +88,16 @@
   main {
     margin-top: 10%;
   }
+
+  .project-card:hover .card-inner {
+    transform: none; /* Desabilita a rotação em dispositivos móveis */
+  }
+
+  .card-back {
+    display: none; /* Esconde a parte de trás do cartão em dispositivos móveis */
+  }
+
+  .project-card {
+    cursor: pointer;
+  }
 }
