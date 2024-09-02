@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-game-board',
@@ -51,6 +52,7 @@ export class GameBoardComponent {
       if (this.board[a[0]][a[1]] && this.board[a[0]][a[1]] === this.board[b[0]][b[1]] && this.board[a[0]][a[1]] === this.board[c[0]][c[1]]) {
         this.winner = this.currentPlayer;
         this.gameOver = true;
+        this.confettiColorido();
         return;
       }
     }
@@ -67,6 +69,18 @@ export class GameBoardComponent {
     this.gameOver = false;
     this.winner = '';
   }
+
+  confettiColorido() {
+    confetti({
+      particleCount: 600,
+      spread: 80,
+      origin: {
+        y: 0.5
+      },
+      colors: ['#ff00bf', '#8000ff', '#0000ff', '#00ffff', '#00ffbf', '#00ff00', '#ffff00', '#ff8000']
+    });
+  }
+
 
   goBack(): void {
     this.router.navigate(['']);
