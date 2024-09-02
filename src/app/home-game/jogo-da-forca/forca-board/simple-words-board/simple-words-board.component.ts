@@ -42,7 +42,7 @@ const temas: Temas = {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './simple-words-board.component.html',
-  styleUrl: './simple-words-board.component.css'
+  styleUrls: [ './simple-words-board.component.css', 'boneco-words-board.component.css' ]
 })
 export class SimpleWordsBoardComponent {
 

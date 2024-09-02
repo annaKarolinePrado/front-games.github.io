@@ -1,0 +1,180 @@
+
+.forca {
+    width: 300px;
+    height: 250px;
+    position: absolute; 
+    top: 2%; 
+    left: 0;
+    z-index: 1000; 
+    margin-left: 17%;
+    margin-top: 8%;
+    border-radius: 50%;
+}
+
+.poste {
+    width: 10px;
+    height: 150px;
+    background-color: black;
+    z-index: 1000;
+}
+  
+.trave {
+    margin-bottom: 1200px;
+    position: absolute;
+    width: 200px;
+    height: 10px;
+    background-color: black;
+    z-index: 1000;
+}
+  
+.corda {
+    margin-left: 170px;
+    width: 10px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: 1000; 
+    background-color: black;
+}
+  
+.cabeca {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    font-size: .5em;
+    border-radius: 50%;
+    margin-left: 160px;
+    margin-top: 28px;
+    width: 30px;
+    height: 30px;
+    position: absolute; 
+    z-index: 1000;
+    background-color: black;
+}
+  
+.olhos {
+    margin-left: 10px;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+    background-color: black;
+    margin-top: 8px;;
+    font-size: 0.7em;
+}
+  
+.corpo {
+    margin-left: 174px;
+    margin-top: 56px;
+    width: 6px;
+    height: 50px;
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    z-index: 1000; 
+    background-color: black;
+}
+  
+.bracoEsquerdo {
+    width: 4px;  
+    height: 35px;  
+    background-color: black;  
+    transform: rotate(45deg);  
+    position: absolute;  
+    top: 60px;  
+    left: 161px;  
+}
+  
+.bracoDireito {
+    width: 4px;  
+    height: 35px;  
+    background-color: black;  
+    transform: rotate(-45deg);  
+    position: absolute;  
+    top: 60px; 
+    left: 188px;  
+}
+  
+.pernaEsquerda {
+    width: 4px;  
+    height: 40px;  
+    background-color: black;  
+    transform: rotate(30deg);  
+    position: absolute;  
+    top: 100px;  
+    left: 165px;  
+}
+  
+.pernaDireita {
+    width: 4px; 
+    height: 40px;  
+    background-color: black;  
+    transform: rotate(-30deg); 
+    position: absolute;  
+    top: 102px;  
+    left: 187px; 
+}
+
+@media (min-width: 1024px) {
+   .board{
+        margin-top: 20%;
+   }
+
+   .forca {
+        margin-top: 8%;
+    }
+
+    .poste {
+        height:250px;
+    }
+  
+    .trave {        
+        width: 200px;        
+    }
+  
+    .corda {
+        height: 50px;       
+    }
+  
+    .cabeca {       
+        font-size: .7em;      
+        margin-left: 150px;
+        margin-top: 50px;
+        width: 50px;
+        height: 50px;      
+    }
+  
+    .olhos {
+        margin-top: 10px;
+    }
+  
+    .corpo {
+        margin-left: 176px;
+        margin-top: 99px;        
+    }
+  
+    .bracoEsquerdo {
+        width: 4px;  
+        height: 40px;        
+        top: 95px;  
+    }
+  
+    .bracoDireito {
+        width: 4px;  
+        height: 40px;    
+        top: 95px; 
+        left: 193px;  
+    }
+  
+    .pernaEsquerda {
+        width: 5px;  
+        height: 40px; 
+        top: 145px;  
+    }
+  
+    .pernaDireita {
+        width: 5px; 
+        height: 40px; 
+        top: 145px;  
+    }
+}
