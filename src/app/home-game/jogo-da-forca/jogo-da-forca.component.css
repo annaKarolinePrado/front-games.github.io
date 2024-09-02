@@ -8,8 +8,7 @@
   }
 
 .game-selection-container {
-    margin-top: 7%;
-    height: 100vh;
+    margin-top: 10%;
 }
   
 .card {
@@ -46,14 +45,16 @@
     .free-game {
         width: 90%;
         margin-left: 5%;
-        margin-top: 20%;
-        font-size: 1.3em;
+        font-size: 1em;
       }
     .card {
-      margin-bottom: 10%;
-      width: 70%;
-      height: 12%;
-      margin-left: 15%;
-      font-size: 0.9em;
+        margin-bottom: 8%;
+        width: 60%;
+        height: 10%;
+        margin-left: 20%;
+        font-size: 1em;
+    }
+    .card:hover {
+        transform: none;
     }
 }
