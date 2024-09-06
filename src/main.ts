@@ -1,4 +1,4 @@
-import { GameBoardComponent } from './app/home-game/jogo-da-velha/game-board/game-board.component';
+import { GameBoardComponent } from './app/home-game/jogo-da-velha/game-board/game-board-level-easy/game-board.component';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, Routes } from '@angular/router';
 import { AppComponent } from './app/app.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },  
   { path: 'home-game/jogo-da-velha', component: JogoDaVelhaComponent },
-  { path: 'home-game/jogo-da-velha/game-board', component: GameBoardComponent },
+  { path: 'home-game/jogo-da-velha/game-board/game-board-level-easy/game-board.component', component: GameBoardComponent },
   { path: 'home-game/jogo-da-velha/game-board/game-board-nivel-dois', component: GameBoardNivelDoisComponent },
   { path: 'home-game/jogo-da-memoria', component: JogoDaMemoriaComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/fruit-board', component: FruitBoardComponent },

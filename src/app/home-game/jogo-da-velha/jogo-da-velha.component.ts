@@ -71,7 +71,7 @@ export class JogoDaVelhaComponent {
     }
 
     if (this.player1 && this.player2) {
-      this.router.navigate(['home-game/jogo-da-velha/game-board'], {
+      this.router.navigate(['home-game/jogo-da-velha/game-board/game-board-level-easy/game-board.component'], {
         state: { player1: this.player1, player2: this.player2 }
       });
     }
