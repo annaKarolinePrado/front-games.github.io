@@ -19,6 +19,7 @@ import { AvailableBoardsComponent } from './app/home-game/jogo-da-memoria/game-b
 import { JogoDaForcaComponent } from './app/home-game/jogo-da-forca/jogo-da-forca.component';
 import { SimpleWordsBoardComponent } from './app/home-game/jogo-da-forca/forca-board/simple-words-board/simple-words-board.component';
 import { GameBoardLevelMediumComponent } from './app/home-game/jogo-da-velha/game-board/game-board-level-medium/game-board-level-medium.component';
+import { TrafficSignsComponent } from './app/home-game/jogo-da-memoria/game-board-free/traffic-signs/traffic-signs.component';
 
 const routes: Routes = [
   { path: '', component: HomeGameComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'home-game/jogo-da-memoria/game-board-free/negative-number-board', component: NegativeNumberBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/hand-board', component: HandBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/flower-board', component: FlowerBoardComponent },
+  { path: 'home-game/jogo-da-memoria/game-board-free/traffic-signs', component: TrafficSignsComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/available-boards', component: AvailableBoardsComponent },
   { path: 'home-game/jogo-da-forca', component: JogoDaForcaComponent },
   { path: 'home-game/jogo-da-forca/forca-board/simple-words-board', component: SimpleWordsBoardComponent },

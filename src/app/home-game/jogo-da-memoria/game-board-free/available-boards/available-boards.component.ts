@@ -26,6 +26,12 @@ export class AvailableBoardsComponent {
   showGameBoardNegativeNumber(): void {
     this.router.navigate(['home-game/jogo-da-memoria/game-board-free/negative-number-board']);
   }
+  showGameBoardTrafficSigns(): void {
+    this.router.navigate(['home-game/jogo-da-memoria/game-board-free/traffic-signs']);
+  }
+  showGameBoardAnimals(): void {
+    this.router.navigate(['home-game/jogo-da-memoria/game-board-free/animals']);
+  }
 
   goBack(): void {
     this.router.navigate(['']);
