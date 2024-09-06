@@ -1,0 +1,145 @@
+.board {
+    margin-bottom: 10%;
+}
+
+.informations {
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+    color: #f2e6ff;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 5%;
+}
+  
+.card {
+    perspective: 1000px;
+    cursor: pointer;
+    width: 100px;
+    height: 90px;
+    border: none;
+    border-radius: 10px;
+}
+  
+.card-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+  
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+  
+.card-front, .card-back {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    margin-left: 0%;
+}
+  
+.card-front {
+    background-color: #00ffcc;
+    font-size: 1.5em;
+}
+  
+.card-back {
+    background-color: #99ffeb;
+    transform: rotateY(180deg);
+    font-size: 2em;
+}
+  
+.game-controls {
+    margin-top: 20px;
+    text-align: center;
+}
+  
+.board-button, .button-result-message {
+    width: 17%;
+    padding: 10px 20px;
+    margin-inline: 2%;
+    font-size: 0.9em;
+    cursor: pointer;
+    background-color: #f2e6ff;
+    text-shadow: 0 0 5px #00ffcc;
+    box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    border: none;
+    border-radius: 10px;
+}
+  
+.board-button:hover, .button-result-message:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+  
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    color: #f2e6ff;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc
+}
+  
+.overlay-content {
+    padding: 20px;
+    text-align: center;
+}
+  
+.overlay-content h2 {
+    margin-bottom: 20px;
+}
+  
+.game-board.blurred {
+    filter: blur(5px);
+}
+
+.button-result-message {
+    width: 60%;
+    margin-top: 5%;
+}
+  
+
+@media (max-width: 765px) {
+
+    .game-board {
+        grid-template-columns: repeat(4, 80px);
+    }
+    .board-button, .button-result-message  {
+        width: 50%;
+        padding: 10px 20px;
+        font-size: 0.9em;
+        margin-top: 5%;
+    }
+    .button-result-message  {
+        width: 80%;
+    }
+    .information {
+        width: 90%;
+        margin-left: 5%;
+        text-align: center;
+        font-size: 1.6rem;
+        margin-top: 10%;
+    }
+    .card, .card-front, .card-back {
+        width: 80px;
+        height: 70px;
+    }
+      
+}
