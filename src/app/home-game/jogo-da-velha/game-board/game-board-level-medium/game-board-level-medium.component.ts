@@ -4,13 +4,13 @@ import { Router } from '@angular/router';
 import confetti from 'canvas-confetti';
 
 @Component({
-  selector: 'app-game-board-nivel-dois',
+  selector: 'app-game-board-level-medium',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './game-board-nivel-dois.component.html',
-  styleUrl: './game-board-nivel-dois.component.css'
+  templateUrl: './game-board-level-medium.component.html',
+  styleUrl: './game-board-level-medium.component.css'
 })
-export class GameBoardNivelDoisComponent {
+export class GameBoardLevelMediumComponent {
   player1: string = '';
   player2: string = '';
   currentPlayer: string = '';
