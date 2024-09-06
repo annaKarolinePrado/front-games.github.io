@@ -34,15 +34,19 @@ export class HandBoardComponent {
     { id: 20, emoji: '👌', revealed: false },  
     { id: 21, emoji: '✋', revealed: false },  
     { id: 22, emoji: '🤚', revealed: false },  
-    { id: 23, emoji: '✋', revealed: false }, 
-    { id: 24, emoji: '🤚', revealed: false }   
-  ];
+    { id: 23, emoji: '✋', revealed: false },  
+    { id: 24, emoji: '🤚', revealed: false },  
+    { id: 25, emoji: '👐', revealed: false },  
+    { id: 26, emoji: '✍️', revealed: false },  
+    { id: 27, emoji: '👐', revealed: false },  
+    { id: 28, emoji: '✍️', revealed: false }   
+];
 
   firstCard: any = null;
   secondCard: any = null;
   matches = 0;
   moves = 0;
-  maxMoves = 25;
+  maxMoves = 30;
   gameOver = false;
   gameResultMessage: string = '';
 

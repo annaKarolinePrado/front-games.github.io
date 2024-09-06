@@ -45,7 +45,7 @@ export class FlowerBoardComponent {
   secondCard: any = null;
   matches = 0;
   moves = 0;
-  maxMoves = 25;
+  maxMoves = 30;
   gameOver = false;
   gameResultMessage: string = '';
 
