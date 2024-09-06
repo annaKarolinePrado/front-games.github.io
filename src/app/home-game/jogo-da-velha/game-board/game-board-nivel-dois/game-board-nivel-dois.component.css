@@ -7,7 +7,7 @@
 
 .board {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(4, 100px);
     gap: 10px;
     justify-content: center;
     margin: 20px auto;
@@ -120,5 +120,24 @@
         z-index: 999;
         margin-top: -20%;
         margin-left: 60%;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+        font-size: 2.3rem;
+        background-color: #6600cc;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .board {
+        grid-template-columns: repeat(4, 90px);
+        gap: 1px;
+        margin-left: 9%;
     }
 }

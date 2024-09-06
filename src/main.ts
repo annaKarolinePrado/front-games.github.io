@@ -18,6 +18,7 @@ import { FlowerBoardComponent } from './app/home-game/jogo-da-memoria/game-board
 import { AvailableBoardsComponent } from './app/home-game/jogo-da-memoria/game-board-free/available-boards/available-boards.component';
 import { JogoDaForcaComponent } from './app/home-game/jogo-da-forca/jogo-da-forca.component';
 import { SimpleWordsBoardComponent } from './app/home-game/jogo-da-forca/forca-board/simple-words-board/simple-words-board.component';
+import { GameBoardNivelDoisComponent } from './app/home-game/jogo-da-velha/game-board/game-board-nivel-dois/game-board-nivel-dois.component';
 
 const routes: Routes = [
   { path: '', component: HomeGameComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },  
   { path: 'home-game/jogo-da-velha', component: JogoDaVelhaComponent },
   { path: 'home-game/jogo-da-velha/game-board', component: GameBoardComponent },
+  { path: 'home-game/jogo-da-velha/game-board/game-board-nivel-dois', component: GameBoardNivelDoisComponent },
   { path: 'home-game/jogo-da-memoria', component: JogoDaMemoriaComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/fruit-board', component: FruitBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/emojis-board', component: EmojisBoardComponent },

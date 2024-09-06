@@ -1,108 +1,143 @@
-.free-game {
-  margin-top: 15%;
-}
-
 .name-player {
-  margin-bottom: 7%;
-  margin-top: 7%;
-  text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
+    margin-bottom: 7%;
+    margin-top: 7%;
+    text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
 }
 
 .divPlayer,
 .buttonPlayer,
 .buttonBack {
-  margin-top: 15px;
+    margin-top: 15px;
 }
 
-.player1, .player2  {
-  text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
-  margin-bottom: 2%;
+.player1,
+.player2 {
+    text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
+    margin-bottom: 2%;
 }
 
 label {
-  display: block;
-  font-weight: bold;
+    display: block;
+    font-weight: bold;
 }
 
 input {
-  width: calc(50% - 20px);
-  padding: 6px;
-  margin-bottom: 15px;
-  border: 1px solid var(--menu-color);
-  border-radius: 10px;
-  background-color: var(--menu-color);
-  color: var(--text-color);
-  box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 15px #6600cc;
+    width: calc(50% - 20px);
+    padding: 6px;
+    margin-bottom: 15px;
+    border: 1px solid var(--menu-color);
+    border-radius: 10px;
+    background-color: var(--menu-color);
+    color: var(--text-color);
+    box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 15px #6600cc;
 }
 
 button {
-  padding: 10px 30px;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--cor-botao);
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--cor-botao);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 button:hover {
-  transform: scale(1.1);
-  background-color: #8000ff;
-  box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
+    transform: scale(1.1);
+    background-color: #8000ff;
+    box-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 20px #6600cc;
 }
 
 .error {
-  color: red;
-  font-size: 0.875em;
-}
-
-.card {
-  width: 37%;
-  height: 20%;
-  margin-left: 31.5%;
-  margin-bottom: 5%;
-  background-color: var(--menu-color);
-  color: var(--text-color);
-  border: 2px solid #00ffcc; 
-  border-radius: 10px;
-  box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(1.1);
+    color: red;
+    font-size: 0.875em;
 }
 
 .option {
-  margin-top: 15%;
+    margin-top: 15%;
 }
 
 .option-game {
-  padding: 8%;
-  text-align: center;
-  font-size: 1.3em;
-  text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
+    padding: 8%;
+    text-align: center;
+    font-size: 1.3em;
+    text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
+}
+
+.niveis {
+    font-size: 1.5em;
+    color: #8000ff;
+    font-weight: bold;
+    text-shadow: 0 0 5px black, 0 0 10px black;
+}
+
+.nivel-facil, .nivel-medio, .nivel-dificil,
+.img-cronometro, .img-niveis, .img-voltar {
+    width: 200px;
+    height: 200px;
+}
+
+.image-container {
+    position: relative;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    pointer-events: none;
+    text-shadow: 0 0 5px #330066, 0 0 10px #330066, 0 0 30px #330066;
+}
+
+.text-option {
+    width: 100%;
+    left: 50%;
+    font-size: 1.3em;
+    color: #8000ff;
 }
 
 @media (max-width: 765px) {
-  input {
-    width: calc(80% - 20px);
-  }
+    input {
+        width: calc(80% - 20px);
+    }
 
-  .option {
-    margin-top: 35%;
-  }
+    .niveis {
+        font-size: 1.5em;
+        color: #8000ff;
+        font-weight: bold;
+        text-shadow: 0 0 5px black, 0 0 10px black;
+    }
 
-  .card {
-    margin-left: 15%;
-    margin-bottom: 10%;
-    width: 70%;
-    height: 50%;
-    font-size: 0.9em;
-  }
+    .nivel-facil, .nivel-medio, .nivel-dificil,
+    .img-cronometro, .img-niveis, .img-voltar {
+        width: 200px;
+        height: 200px;
+    }
 
-  .free-game {
-    margin-top: 25%;
-  }
+    .image-container {
+        position: relative;
+    }
+
+    .text-overlay {
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 1.1em;
+        font-weight: bold;
+        pointer-events: none;
+        text-shadow: 0 0 5px #330066, 0 0 10px #330066, 0 0 30px #330066;
+    }
+
+    .text-option {
+        width: 100%;
+        left: 50%;
+        font-size: 1.3em;
+        color: #8000ff;
+    }
 }

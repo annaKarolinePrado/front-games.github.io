@@ -4,17 +4,17 @@ import { Router } from '@angular/router';
 import confetti from 'canvas-confetti';
 
 @Component({
-  selector: 'app-game-board',
+  selector: 'app-game-board-nivel-dois',
   standalone: true,
-  imports: [CommonModule], 
-  templateUrl: './game-board.component.html',
-  styleUrls: ['./game-board.component.css']
+  imports: [CommonModule],
+  templateUrl: './game-board-nivel-dois.component.html',
+  styleUrl: './game-board-nivel-dois.component.css'
 })
-export class GameBoardComponent {
+export class GameBoardNivelDoisComponent {
   player1: string = '';
   player2: string = '';
   currentPlayer: string = '';
-  board: string[][] = [['', '', ''], ['', '', ''], ['', '', '']];
+  board: string[][] = [['', '', '', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']];
   gameOver: boolean = false;
   winner: string = '';
 
@@ -37,19 +37,25 @@ export class GameBoardComponent {
 
   checkWinner(): void {
     const winningCombinations = [
-      [[0, 0], [0, 1], [0, 2]],
-      [[1, 0], [1, 1], [1, 2]],
-      [[2, 0], [2, 1], [2, 2]],
-      [[0, 0], [1, 0], [2, 0]],
-      [[0, 1], [1, 1], [2, 1]],
-      [[0, 2], [1, 2], [2, 2]],
-      [[0, 0], [1, 1], [2, 2]],
-      [[0, 2], [1, 1], [2, 0]],
+      [[0, 0], [0, 1], [0, 2], [0, 3]],
+      [[1, 0], [1, 1], [1, 2], [1, 3]],
+      [[2, 0], [2, 1], [2, 2], [2, 3]],
+      [[3, 0], [3, 1], [3, 2], [3, 3]],
+      [[0, 0], [1, 0], [2, 0], [3, 0]],
+      [[0, 1], [1, 1], [2, 1], [3, 1]],
+      [[0, 2], [1, 2], [2, 2], [3, 2]],
+      [[0, 3], [1, 3], [2, 3], [3, 3]],
+      [[0, 0], [1, 1], [2, 2], [3, 3]],
+      [[0, 3], [1, 2], [2, 1], [3, 0]],
     ];
 
     for (const combination of winningCombinations) {
-      const [a, b, c] = combination;
-      if (this.board[a[0]][a[1]] && this.board[a[0]][a[1]] === this.board[b[0]][b[1]] && this.board[a[0]][a[1]] === this.board[c[0]][c[1]]) {
+      const [a, b, c, d] = combination;
+      if (this.board[a[0]][a[1]] && 
+        this.board[a[0]][a[1]] === this.board[b[0]][b[1]] && 
+        this.board[a[0]][a[1]] === this.board[c[0]][c[1]] && 
+        this.board[a[0]][a[1]] === this.board[d[0]][d[1]]) {
+
         this.winner = this.currentPlayer;
         this.gameOver = true;
         this.confettiColorido();
@@ -64,7 +70,7 @@ export class GameBoardComponent {
   }
 
   resetBoard(): void {
-    this.board = [['', '', ''], ['', '', ''], ['', '', '']];
+    this.board = [['', '', '', ''], ['', '', '', ''], ['', '', '', ''], ['', '', '', '']];
     this.currentPlayer = this.player1;
     this.gameOver = false;
     this.winner = '';
@@ -89,3 +95,4 @@ export class GameBoardComponent {
     this.router.navigate(['']);
   }
 }
+
