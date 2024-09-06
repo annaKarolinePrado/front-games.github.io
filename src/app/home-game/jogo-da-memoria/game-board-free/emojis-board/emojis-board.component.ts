@@ -27,14 +27,26 @@ export class EmojisBoardComponent {
     { id: 13, image: '🤔', revealed: false },
     { id: 14, image: '😴', revealed: false },
     { id: 15, image: '😡', revealed: false },
-    { id: 16, image: '😇', revealed: false }
+    { id: 16, image: '😇', revealed: false },
+    { id: 17, image: '😅', revealed: false },
+    { id: 18, image: '😜', revealed: false },
+    { id: 19, image: '🤯', revealed: false },
+    { id: 20, image: '😱', revealed: false },
+    { id: 21, image: '🥳', revealed: false },
+    { id: 22, image: '🤓', revealed: false },
+    { id: 23, image: '😅', revealed: false },
+    { id: 24, image: '😜', revealed: false },
+    { id: 25, image: '🤯', revealed: false },
+    { id: 26, image: '😱', revealed: false },
+    { id: 27, image: '🥳', revealed: false },
+    { id: 28, image: '🤓', revealed: false }
   ];
 
   firstCard: any = null;
   secondCard: any = null;
   matches = 0;
   moves = 0;
-  maxMoves = 16;
+  maxMoves = 25;
   gameOver = false;
   gameResultMessage: string = '';
 
