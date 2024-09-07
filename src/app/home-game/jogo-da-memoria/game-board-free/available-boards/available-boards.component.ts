@@ -32,6 +32,9 @@ export class AvailableBoardsComponent {
   showGameBoardAnimals(): void {
     this.router.navigate(['home-game/jogo-da-memoria/game-board-free/animals']);
   }
+  showGameBoardSymbols(): void {
+    this.router.navigate(['home-game/jogo-da-memoria/game-board-free/symbols']);
+  }
 
   goBack(): void {
     this.router.navigate(['']);

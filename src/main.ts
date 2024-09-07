@@ -21,6 +21,7 @@ import { SimpleWordsBoardComponent } from './app/home-game/jogo-da-forca/forca-b
 import { GameBoardLevelMediumComponent } from './app/home-game/jogo-da-velha/game-board/game-board-level-medium/game-board-level-medium.component';
 import { TrafficSignsComponent } from './app/home-game/jogo-da-memoria/game-board-free/traffic-signs/traffic-signs.component';
 import { AnimalsComponent } from './app/home-game/jogo-da-memoria/game-board-free/animals/animals.component';
+import { SymbolsComponent } from './app/home-game/jogo-da-memoria/game-board-free/symbols/symbols.component';
 
 const routes: Routes = [
   { path: '', component: HomeGameComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'home-game/jogo-da-memoria/game-board-free/flower-board', component: FlowerBoardComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/traffic-signs', component: TrafficSignsComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/animals', component: AnimalsComponent },
+  { path: 'home-game/jogo-da-memoria/game-board-free/symbols', component: SymbolsComponent },
   { path: 'home-game/jogo-da-memoria/game-board-free/available-boards', component: AvailableBoardsComponent },
   { path: 'home-game/jogo-da-forca', component: JogoDaForcaComponent },
   { path: 'home-game/jogo-da-forca/forca-board/simple-words-board', component: SimpleWordsBoardComponent },

@@ -19,6 +19,7 @@ import { SimpleWordsBoardComponent } from './home-game/jogo-da-forca/forca-board
 import { GameBoardLevelMediumComponent } from './home-game/jogo-da-velha/game-board/game-board-level-medium/game-board-level-medium.component';
 import { TrafficSignsComponent } from './home-game/jogo-da-memoria/game-board-free/traffic-signs/traffic-signs.component';
 import { AnimalsComponent } from './home-game/jogo-da-memoria/game-board-free/animals/animals.component';
+import { SymbolsComponent } from './home-game/jogo-da-memoria/game-board-free/symbols/symbols.component';
 
 @Component({
   selector: 'app-root',
@@ -40,6 +41,7 @@ import { AnimalsComponent } from './home-game/jogo-da-memoria/game-board-free/an
             FlowerBoardComponent,
             TrafficSignsComponent,
             AnimalsComponent,
+            SymbolsComponent,
             AvailableBoardsComponent,
             JogoDaForcaComponent,
             SimpleWordsBoardComponent ],
