@@ -5,7 +5,10 @@
 
 .informations {
     text-shadow: 0 0 5px #201658, 0 0 10px #201658, 0 0 30px #201658, 0 0 40px #201658;
+    font-size: 2rem;
+    margin-bottom: 6%;
     color: #f2e6ff;
+    margin-top: -5%;
 }
 
 .game-board {

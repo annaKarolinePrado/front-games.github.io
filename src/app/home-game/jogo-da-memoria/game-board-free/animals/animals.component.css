@@ -1,10 +1,12 @@
 .board {
     margin-bottom: 10%;
+    margin-top: -10%;
 }
 
 .informations {
-    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 30px #00ffcc;
     color: #f2e6ff;
+    margin-top: -5%;
 }
 
 .game-board {

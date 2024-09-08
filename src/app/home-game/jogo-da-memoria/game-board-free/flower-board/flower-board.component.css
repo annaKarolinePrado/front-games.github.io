@@ -8,6 +8,7 @@
     font-size: 2rem;
     margin-bottom: 6%;
     color: #f2e6ff;
+    margin-top: -5%;
 }
 
 .game-board {
@@ -17,7 +18,6 @@
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 5%;
-    
 }
   
 .card {
