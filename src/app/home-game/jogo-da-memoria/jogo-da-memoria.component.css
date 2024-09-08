@@ -19,11 +19,7 @@
     text-shadow: 0 0 15px #6600ff;
     cursor: pointer;
 }
-
-.card:hover {
-    transform: scale(1.1);
-}
-  
+ 
 .card-content {
     display: flex;
     justify-content: center;
