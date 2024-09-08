@@ -16,15 +16,15 @@
 
 <div class="level" (click)="homeLevelGame()" *ngIf="showLevelGame" >
     <h2 class="niveis">Dificuldade</h2>
-    <div class="image-container" (click)="homeNameGame()">
+    <div class="image-container" (click)="homeNameGameEasy()">
         <img class="nivel-facil" src="/assets/outros/circulo-roxo.png">
         <span class="text-overlay">Fácil</span>
     </div>
-    <div class="image-container" (click)="homeLevelGame()">
+    <div class="image-container" (click)="homeNameGameAverage()">
         <img class="nivel-medio" src="/assets/outros/circulo-roxo.png">
         <span class="text-overlay">Médio</span>
     </div>
-    <div class="image-container" (click)="homeLevelGame()">
+    <div class="image-container" (click)="homeNameGameHard()">
         <img class="nivel-dificil" src="/assets/outros/circulo-roxo.png">
         <span class="text-overlay">Difícil</span>
     </div>
@@ -43,7 +43,7 @@
     </div>
 </div>
 
-<div  class="names" *ngIf="showNameGame">
+<div  class="names" *ngIf="showNameGameEasy">
     <h2 class="name-player">Informe os nomes dos jogadores</h2>
     <div class="divPlayer">
         <label for="player1" class="player1">Jogador X:</label>
@@ -66,3 +66,45 @@
 
 
 
+<div  class="names" *ngIf="showNameGameAverage">
+    <h2 class="name-player">Informe os nomes dos jogadores</h2>
+    <div class="divPlayer">
+        <label for="player1" class="player1">Jogador X:</label>
+        <input id="player1" [(ngModel)]="player1" name="player1">
+        <div *ngIf="player1Error" class="error">{{ player1Error }}</div>
+    </div>
+
+    <div class="divPlayer">
+        <label for="player2" class="player2">Jogador O:</label>
+        <input id="player2" [(ngModel)]="player2" name="player2">
+        <div *ngIf="player2Error" class="error">{{ player2Error }}</div>
+    </div>
+    <div class="buttonPlayer">
+        <button (click)="startGameAverage()">Iniciar Jogo</button>
+    </div>
+    <div class="buttonBack">
+        <button (click)="backToOption()">Voltar</button>
+    </div>
+</div>
+
+
+<div  class="names" *ngIf="showNameGameHard">
+    <h2 class="name-player">Informe os nomes dos jogadores</h2>
+    <div class="divPlayer">
+        <label for="player1" class="player1">Jogador X:</label>
+        <input id="player1" [(ngModel)]="player1" name="player1">
+        <div *ngIf="player1Error" class="error">{{ player1Error }}</div>
+    </div>
+
+    <div class="divPlayer">
+        <label for="player2" class="player2">Jogador O:</label>
+        <input id="player2" [(ngModel)]="player2" name="player2">
+        <div *ngIf="player2Error" class="error">{{ player2Error }}</div>
+    </div>
+    <div class="buttonPlayer">
+        <button (click)="startGameHard()">Iniciar Jogo</button>
+    </div>
+    <div class="buttonBack">
+        <button (click)="backToOption()">Voltar</button>
+    </div>
+</div>

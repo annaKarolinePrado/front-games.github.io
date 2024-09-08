@@ -22,6 +22,9 @@ export class JogoDaVelhaComponent {
   showLevelGame = false;
   showConometroGame = false;
   showNameGame = false;
+  showNameGameEasy =false;
+  showNameGameAverage =false;
+  showNameGameHard =false;
 
   homeOptionGame() {
     this.showOptionsGame = true; 
@@ -44,11 +47,34 @@ export class JogoDaVelhaComponent {
     this.showNameGame = false;
   }
 
-  homeNameGame() {
+  homeNameGameEasy() {
     this.showOptionsGame = false; 
     this.showLevelGame = false; 
     this.showConometroGame = false;
-    this.showNameGame = true;
+    this.showNameGame = false;
+    this.showNameGameEasy = true;
+    this.showNameGameAverage = false;
+    this.showNameGameHard = false;
+  }
+
+  homeNameGameAverage() {
+    this.showOptionsGame = false; 
+    this.showLevelGame = false; 
+    this.showConometroGame = false;
+    this.showNameGame = false;
+    this.showNameGameEasy = false;
+    this.showNameGameAverage = true;
+    this.showNameGameHard = false;
+  }
+
+  homeNameGameHard() {
+    this.showOptionsGame = false; 
+    this.showLevelGame = false; 
+    this.showConometroGame = false;
+    this.showNameGame = false;
+    this.showNameGameEasy = false;
+    this.showNameGameAverage = false;
+    this.showNameGameHard = true;
   }
 
   backToOption() {
@@ -89,7 +115,7 @@ export class JogoDaVelhaComponent {
     }
 
     if (this.player1 && this.player2) {
-      this.router.navigate(['home-game/jogo-da-velha/game-board'], {
+      this.router.navigate(['home-game/jogo-da-velha/game-board/game-board-level-medium/game-board-level-medium.component'], {
         state: { player1: this.player1, player2: this.player2 }
       });
     }
