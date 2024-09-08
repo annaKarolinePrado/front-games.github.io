@@ -1,16 +1,13 @@
+
+
 .free-game {
-    margin-top: 7%;
+    margin-top: -10%;
     font-size: 1.5em;
     color: #6600ff;
     text-shadow: 0 0 10px #6600ff;
     text-align: center;
 
   }
-
-.game-selection-container {
-    margin-top: 7%;
-    height: 100vh;
-}
   
 .card {
     width: 40%;
@@ -24,10 +21,6 @@
     text-shadow: 0 0 15px #6600ff;
     cursor: pointer;
 }
-
-.card:hover {
-    transform: scale(1.1);
-}
   
 .card-content {
     display: flex;
@@ -38,6 +31,7 @@
     font-size: 1em;
     text-align: center;
 }
+
 .option-game {
     font-size: 1.3em;
 }
@@ -46,14 +40,13 @@
     .free-game {
         width: 90%;
         margin-left: 5%;
-        margin-top: 20%;
         font-size: 1.3em;
       }
     .card {
       margin-bottom: 10%;
-      width: 70%;
-      height: 12%;
-      margin-left: 15%;
-      font-size: 0.9em;
+      width: 60%;
+      height: 10%;
+      margin-left: 20%;
+      font-size: 0.8em;
     }
 }
