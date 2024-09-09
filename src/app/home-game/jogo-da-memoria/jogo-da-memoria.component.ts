@@ -17,13 +17,13 @@ export class JogoDaMemoriaComponent {
   }
 
   temas = [
-    //{ path: 'home-game/jogo-da-memoria/game-board-free/animals' },
-    //{ path: 'home-game/jogo-da-memoria/game-board-free/emojis-board' },
-    //{ path: 'home-game/jogo-da-memoria/game-board-free/flower-board' },
-    //{ path: 'home-game/jogo-da-memoria/game-board-free/fruit-board' },
-    //{ path: 'home-game/jogo-da-memoria/game-board-free/hand-board' },
-    //{ path: 'home-game/jogo-da-memoria/game-board-free/negative-number-board' },
-    //{ path: 'home-game/jogo-da-memoria/game-board-free/symbols' },
+    { path: 'home-game/jogo-da-memoria/game-board-free/animals' },
+    { path: 'home-game/jogo-da-memoria/game-board-free/emojis-board' },
+    { path: 'home-game/jogo-da-memoria/game-board-free/flower-board' },
+    { path: 'home-game/jogo-da-memoria/game-board-free/fruit-board' },
+    { path: 'home-game/jogo-da-memoria/game-board-free/hand-board' },
+    { path: 'home-game/jogo-da-memoria/game-board-free/negative-number-board' },
+    { path: 'home-game/jogo-da-memoria/game-board-free/symbols' },
     { path: 'home-game/jogo-da-memoria/game-board-free/traffic-signs' },
   ];
 
