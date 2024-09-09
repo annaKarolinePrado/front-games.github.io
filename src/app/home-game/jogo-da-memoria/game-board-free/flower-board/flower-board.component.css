@@ -5,7 +5,7 @@
 
 .information {
     text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 30px #ffff00, 0 0 40px #ffff00;
-    font-size: 2rem;
+    font-size: 1em;
     margin-bottom: 6%;
     color: #f2e6ff;
     margin-top: -5%;
@@ -60,7 +60,7 @@
 .card-back {
     background-color: #ffff80;
     transform: rotateY(180deg);
-    font-size: 2em;
+    font-size: 2.2em;
 }
   
 .game-controls {
@@ -138,7 +138,6 @@
         width: 90%;
         margin-left: 5%;
         text-align: center;
-        font-size: 1.6rem;
         margin-top: 10%;
     }
     .card, .card-front, .card-back {
