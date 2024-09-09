@@ -1,7 +1,8 @@
 <div class="board">
     <div class="information">
-        <p class="informations">Jogadas restantes: {{ moves }} / {{ maxMoves }}</p>
+        <p class="informations" *ngIf="!jogoCronometrado">Jogadas restantes: {{ moves }} / {{ maxMoves }}</p>
         <p class="informations">Combinações encontradas: {{ matches }}</p>
+        <p class="informations" *ngIf="jogoCronometrado">Tempo restante: {{ tempoRestante }}s</p>
     </div>
 
     <div class="game-board">

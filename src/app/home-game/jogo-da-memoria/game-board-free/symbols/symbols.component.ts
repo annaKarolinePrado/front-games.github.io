@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import confetti from 'canvas-confetti';
 
 @Component({
@@ -10,7 +10,7 @@ import confetti from 'canvas-confetti';
   templateUrl: './symbols.component.html',
   styleUrl: './symbols.component.css'
 })
-export class SymbolsComponent {
+export class SymbolsComponent implements OnInit {
 
   cards = [
     { id: 1, image: '❤️', revealed: false },  
@@ -50,9 +50,36 @@ export class SymbolsComponent {
   maxMoves = 30;
   gameOver = false;
   gameResultMessage: string = '';
+  jogoCronometrado: boolean = false;
+  tempoRestante: number = 0;
+  cronometroIntervalo: any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private route: ActivatedRoute) {
     this.shuffleCards();
+  }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.jogoCronometrado = params['cronometrado'] === 'true';
+      this.iniciarCronometro();
+    });
+  }
+
+  iniciarCronometro() {
+
+    if (this.cronometroIntervalo) {
+      clearInterval(this.cronometroIntervalo);
+    }
+
+    this.tempoRestante = 130; // Tempo inicial do cronômetro
+    this.cronometroIntervalo = setInterval(() => {
+      this.tempoRestante--;
+      if (this.tempoRestante <= 0) {
+        clearInterval(this.cronometroIntervalo);
+        this.gameOver = true;
+        this.endGame(false); // Jogo terminou por tempo esgotado
+      }
+    }, 1000);
   }
 
   shuffleCards() {
@@ -74,7 +101,7 @@ export class SymbolsComponent {
 
       this.moves++;
 
-      if (this.moves >= this.maxMoves) {
+      if ((this.moves >= this.maxMoves) && (!this.jogoCronometrado)) {
         this.gameOver = true;
         setTimeout(() => {
           this.endGame(false);
@@ -106,27 +133,43 @@ export class SymbolsComponent {
   }
 
   resetGame() {
+    if (this.cronometroIntervalo) {
+      clearInterval(this.cronometroIntervalo);
+    }
+
     this.cards.forEach(card => (card.revealed = false));
     this.matches = 0;
     this.moves = 0;
     this.gameOver = false;
     this.gameResultMessage = '';
     this.shuffleCards();
+
+    if (this.jogoCronometrado) {
+      this.iniciarCronometro();
+    }
   }
 
   endGame(won: boolean) {
     this.gameOver = true;
+
+    if (this.cronometroIntervalo) {
+      clearInterval(this.cronometroIntervalo);
+    }
+    
+    const MENSAGEM_FIM_JOGO = this.jogoCronometrado 
+      ? "Tempo esgotado." 
+      : "Jogo terminado! <br> Número máximo de jogadas alcançado.";
     this.gameResultMessage = won
       ? 'Parabéns! <br> Você encontrou todas as combinações!'
-      : 'Jogo terminado! <br> Número máximo de jogadas alcançado.';
+      : MENSAGEM_FIM_JOGO;
+
       if (won) {
         this.launchConfetti();
       }
-      //this.confettiColorido();
   }
 
   launchConfetti() {
-    const duration = 3 * 1000; // duração em milissegundos
+    const duration = 3 * 1000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
   
