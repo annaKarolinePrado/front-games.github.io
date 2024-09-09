@@ -32,13 +32,13 @@ export class FlowerBoardComponent {
     { id: 18, emoji: '🌵', revealed: false }, // Cactus
     { id: 19, emoji: '🌱', revealed: false }, // Seedling
     { id: 20, emoji: '🍁', revealed: false }, // Maple Leaf
-    { id: 21, emoji: '🍂', revealed: false }, // Fallen Leaf
+    { id: 21, emoji: '🪷', revealed: false }, // Fallen Leaf
     { id: 22, emoji: '🍃', revealed: false }, // Leaf Fluttering in Wind
-    { id: 23, emoji: '🍂', revealed: false }, // Fallen Leaf
+    { id: 23, emoji: '🪷', revealed: false }, // Fallen Leaf
     { id: 24, emoji: '🍃', revealed: false }, // Leaf Fluttering in Wind
-    { id: 25, emoji: '🌾', revealed: false }, // Sheaf of Rice
+    { id: 25, emoji: '🪻', revealed: false }, // Sheaf of Rice
     { id: 26, emoji: '🌿', revealed: false }, // Herb
-    { id: 27, emoji: '🌾', revealed: false }, // Sheaf of Rice
+    { id: 27, emoji: '🪻', revealed: false }, // Sheaf of Rice
     { id: 28, emoji: '🌿', revealed: false }  // Herb
   ];
 

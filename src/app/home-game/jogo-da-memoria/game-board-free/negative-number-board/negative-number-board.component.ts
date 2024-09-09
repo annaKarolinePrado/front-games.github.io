@@ -12,38 +12,44 @@ import confetti from 'canvas-confetti';
 })
 export class NegativeNumberBoardComponent {
 
+  
+
   cards = [
-    { id: 1, number: -1, revealed: false },
-    { id: 2, number: -2, revealed: false },
-    { id: 3, number: -3, revealed: false },
-    { id: 4, number: -4, revealed: false },
-    { id: 5, number: -5, revealed: false },
-    { id: 6, number: -6, revealed: false },
-    { id: 7, number: -1, revealed: false },
-    { id: 8, number: -2, revealed: false },
-    { id: 9, number: -3, revealed: false },
-    { id: 10, number: -4, revealed: false },
-    { id: 11, number: -5, revealed: false },
-    { id: 12, number: -6, revealed: false },
-    { id: 13, number: -7, revealed: false },
-    { id: 14, number: -8, revealed: false },
-    { id: 15, number: -9, revealed: false },
-    { id: 16, number: -10, revealed: false },
-    { id: 17, number: -7, revealed: false },
-    { id: 18, number: -8, revealed: false },
-    { id: 19, number: -9, revealed: false },
-    { id: 20, number: -10, revealed: false },
-    { id: 21, number: -11, revealed: false },
-    { id: 22, number: -12, revealed: false },
-    { id: 23, number: -11, revealed: false },
-    { id: 24, number: -12, revealed: false }
+    { id: 1, image: '🌮', revealed: false },
+    { id: 2, image: '🥪', revealed: false },
+    { id: 3, image: '🥗', revealed: false },
+    { id: 4, image: '🧀', revealed: false },
+    { id: 5, image: '🍕', revealed: false },
+    { id: 6, image: '🍜', revealed: false },
+    { id: 7, image: '🎂', revealed: false },
+    { id: 8, image: '🍨', revealed: false },
+    { id: 9, image: '🌮', revealed: false },
+    { id: 10, image: '🥪', revealed: false },
+    { id: 11, image: '🥗', revealed: false },
+    { id: 12, image: '🧀', revealed: false },
+    { id: 13, image: '🍕', revealed: false },
+    { id: 14, image: '🍜', revealed: false },
+    { id: 15, image: '🎂', revealed: false },
+    { id: 16, image: '🍨', revealed: false },
+    { id: 17, image: '🍥', revealed: false },
+    { id: 18, image: '🍔', revealed: false },
+    { id: 19, image: '🌭', revealed: false },
+    { id: 20, image: '🍻', revealed: false },
+    { id: 21, image: '🍩', revealed: false },
+    { id: 22, image: '🍣', revealed: false },
+    { id: 23, image: '🍥', revealed: false },
+    { id: 24, image: '🍔', revealed: false },
+    { id: 25, image: '🌭', revealed: false },
+    { id: 26, image: '🍻', revealed: false },
+    { id: 27, image: '🍩', revealed: false },
+    { id: 28, image: '🍣', revealed: false }
   ];
 
   firstCard: any = null;
   secondCard: any = null;
   matches = 0;
   moves = 0;
-  maxMoves = 25; 
+  maxMoves = 30;
   gameOver = false;
   gameResultMessage: string = '';
 
@@ -72,13 +78,15 @@ export class NegativeNumberBoardComponent {
 
       if (this.moves >= this.maxMoves) {
         this.gameOver = true;
-        this.endGame(false);
+        setTimeout(() => {
+          this.endGame(false);
+        }, 100);
       }
     }
   }
 
   checkMatch() {
-    if (this.firstCard.number === this.secondCard.number) {
+    if (this.firstCard.image === this.secondCard.image) {
       this.matches++;
       this.resetSelection();
 
@@ -141,9 +149,7 @@ export class NegativeNumberBoardComponent {
       confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
     }, 250);
   }
-
   goBack(): void {
     this.router.navigate(['home-game/jogo-da-memoria']);
   }
-
 }

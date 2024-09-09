@@ -14,7 +14,7 @@ export class EmojisBoardComponent {
 
   cards = [
     { id: 1, image: '😀', revealed: false },
-    { id: 2, image: '😎', revealed: false },
+    { id: 2, image: '😘', revealed: false },
     { id: 3, image: '😍', revealed: false },
     { id: 4, image: '🤩', revealed: false },
     { id: 5, image: '🤔', revealed: false },
@@ -22,7 +22,7 @@ export class EmojisBoardComponent {
     { id: 7, image: '😡', revealed: false },
     { id: 8, image: '😇', revealed: false },
     { id: 9, image: '😀', revealed: false },
-    { id: 10, image: '😎', revealed: false },
+    { id: 10, image: '😘', revealed: false },
     { id: 11, image: '😍', revealed: false },
     { id: 12, image: '🤩', revealed: false },
     { id: 13, image: '🤔', revealed: false },
@@ -34,13 +34,13 @@ export class EmojisBoardComponent {
     { id: 19, image: '🤯', revealed: false },
     { id: 20, image: '😱', revealed: false },
     { id: 21, image: '🥳', revealed: false },
-    { id: 22, image: '🤓', revealed: false },
+    { id: 22, image: '😳', revealed: false },
     { id: 23, image: '😅', revealed: false },
     { id: 24, image: '😜', revealed: false },
     { id: 25, image: '🤯', revealed: false },
     { id: 26, image: '😱', revealed: false },
     { id: 27, image: '🥳', revealed: false },
-    { id: 28, image: '🤓', revealed: false }
+    { id: 28, image: '😳', revealed: false }
   ];
 
   firstCard: any = null;

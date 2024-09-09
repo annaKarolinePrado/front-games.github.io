@@ -1,28 +1,28 @@
 <div class="board">
-    <div class="information">
-        <p class="informations">Jogadas restantes: {{ moves }} / {{ maxMoves }}</p>
-        <p class="informations">Combinações encontradas: {{ matches }}</p>
-    </div>
+  <div class="information">
+      <p class="informations">Jogadas restantes: {{ moves }} / {{ maxMoves }}</p>
+      <p class="informations">Combinações encontradas: {{ matches }}</p>
+  </div>
 
-    <div class="game-board">
-        <div *ngFor="let card of cards" class="card" (click)="revealCard(card)">
-          <div class="card-inner" [ngClass]="{ 'flipped': card.revealed }">
-            <div class="card-front">?</div>
-            <div class="card-back">{{ card.number }}</div>
-          </div>
+  <div class="game-board">
+      <div *ngFor="let card of cards" class="card" (click)="revealCard(card)">
+        <div class="card-inner" [ngClass]="{ 'flipped': card.revealed }">
+          <div class="card-front">?</div>
+          <div class="card-back">{{ card.image }}</div>
         </div>
-    </div>
-    
-    <div class="game-controls">
-        <button class="board-button" (click)="resetGame()">Reiniciar Jogo</button>
-        <button class="board-button" (click)="goBack()">Voltar</button>
-    </div>
+      </div>
+  </div>
+  
+  <div class="game-controls">
+      <button class="board-button" (click)="resetGame()">Reiniciar Jogo</button>
+      <button class="board-button" (click)="goBack()">Voltar</button>
+  </div>
 
-    <div *ngIf="gameOver" class="overlay" >
-        <div class="overlay-content">
-          <p [innerHTML]="gameResultMessage">{{ gameResultMessage }}</p>
-          <button class="button-result-message" (click)="resetGame()" >Jogar Novamente</button>
-          <button class="button-result-message" (click)="goBack()" >Voltar</button>
-        </div>
-    </div>
+  <div *ngIf="gameOver" class="overlay" >
+      <div class="overlay-content">
+        <p [innerHTML]="gameResultMessage">{{ gameResultMessage }}</p>
+        <button class="button-result-message" (click)="resetGame()" >Jogar Novamente</button>
+        <button class="button-result-message" (click)="goBack()" >Voltar</button>
+      </div>
+  </div>
 </div>
