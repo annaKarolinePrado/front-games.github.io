@@ -9,7 +9,7 @@
       <div *ngFor="let card of cards" class="card" (click)="revealCard(card)">
         <div class="card-inner" [ngClass]="{ 'flipped': card.revealed }">
           <div class="card-front">?</div>
-          <div class="card-back">{{ card.image }}</div>
+          <div class="card-back">{{ card.emoji }}</div>
         </div>
       </div>
   </div>

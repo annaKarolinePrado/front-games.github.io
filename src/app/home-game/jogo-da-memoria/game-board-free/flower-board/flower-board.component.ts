@@ -11,37 +11,58 @@ import confetti from 'canvas-confetti';
   styleUrl: './flower-board.component.css'
 })
 export class FlowerBoardComponent implements OnInit {
-  cards = [
-    { id: 1, emoji: '🌸', revealed: false }, // Cherry Blossom
-    { id: 2, emoji: '🌼', revealed: false }, // Blossom
-    { id: 3, emoji: '🌻', revealed: false }, // Sunflower
-    { id: 4, emoji: '🌹', revealed: false }, // Rose
-    { id: 5, emoji: '🌺', revealed: false }, // Hibiscus
-    { id: 6, emoji: '🌷', revealed: false }, // Tulip
-    { id: 7, emoji: '🌸', revealed: false }, // Cherry Blossom
-    { id: 8, emoji: '🌼', revealed: false }, // Blossom
-    { id: 9, emoji: '🌻', revealed: false }, // Sunflower
-    { id: 10, emoji: '🌹', revealed: false }, // Rose
-    { id: 11, emoji: '🌺', revealed: false }, // Hibiscus
-    { id: 12, emoji: '🌷', revealed: false }, // Tulip
-    { id: 13, emoji: '💐', revealed: false }, // Bouquet
-    { id: 14, emoji: '🌵', revealed: false }, // Cactus
-    { id: 15, emoji: '🌱', revealed: false }, // Seedling
-    { id: 16, emoji: '🍁', revealed: false }, // Maple Leaf
-    { id: 17, emoji: '💐', revealed: false }, // Bouquet
-    { id: 18, emoji: '🌵', revealed: false }, // Cactus
-    { id: 19, emoji: '🌱', revealed: false }, // Seedling
-    { id: 20, emoji: '🍁', revealed: false }, // Maple Leaf
-    { id: 21, emoji: '🪷', revealed: false }, // Fallen Leaf
-    { id: 22, emoji: '🍃', revealed: false }, // Leaf Fluttering in Wind
-    { id: 23, emoji: '🪷', revealed: false }, // Fallen Leaf
-    { id: 24, emoji: '🍃', revealed: false }, // Leaf Fluttering in Wind
-    { id: 25, emoji: '🪻', revealed: false }, // Sheaf of Rice
-    { id: 26, emoji: '🌿', revealed: false }, // Herb
-    { id: 27, emoji: '🪻', revealed: false }, // Sheaf of Rice
-    { id: 28, emoji: '🌿', revealed: false }  // Herb
+
+  private readonly easyCards = [
+    { id: 1, emoji: '🌱', revealed: false },
+    { id: 2, emoji: '🌻', revealed: false },
+    { id: 3, emoji: '🌱', revealed: false },
+    { id: 4, emoji: '🌻', revealed: false },
+    { id: 5, emoji: '🌺', revealed: false },
+    { id: 6, emoji: '🌺', revealed: false },
+    { id: 7, emoji: '🌵', revealed: false },
+    { id: 8, emoji: '🌵', revealed: false },
+    { id: 9, emoji: '🪷', revealed: false },
+    { id: 10, emoji: '🪷', revealed: false },
+    { id: 11, emoji: '🌹', revealed: false },
+    { id: 12, emoji: '🌹', revealed: false },
+    { id: 13, emoji: '🌼', revealed: false },
+    { id: 14, emoji: '🌼', revealed: false },
+    { id: 15, emoji: '💐', revealed: false },
+    { id: 16, emoji: '💐', revealed: false }
   ];
 
+  private readonly hardCards = [
+    { id: 1, emoji: '🌸', revealed: false },
+    { id: 2, emoji: '🌼', revealed: false }, 
+    { id: 3, emoji: '🌻', revealed: false }, 
+    { id: 4, emoji: '🌹', revealed: false }, 
+    { id: 5, emoji: '🌺', revealed: false }, 
+    { id: 6, emoji: '🌷', revealed: false }, 
+    { id: 7, emoji: '🌸', revealed: false }, 
+    { id: 8, emoji: '🌼', revealed: false }, 
+    { id: 9, emoji: '🌻', revealed: false }, 
+    { id: 10, emoji: '🌹', revealed: false }, 
+    { id: 11, emoji: '🌺', revealed: false }, 
+    { id: 12, emoji: '🌷', revealed: false },
+    { id: 13, emoji: '💐', revealed: false }, 
+    { id: 14, emoji: '🌵', revealed: false }, 
+    { id: 15, emoji: '🌱', revealed: false }, 
+    { id: 16, emoji: '🍁', revealed: false }, 
+    { id: 17, emoji: '💐', revealed: false }, 
+    { id: 18, emoji: '🌵', revealed: false }, 
+    { id: 19, emoji: '🌱', revealed: false },
+    { id: 20, emoji: '🍁', revealed: false }, 
+    { id: 21, emoji: '🪷', revealed: false }, 
+    { id: 22, emoji: '🍃', revealed: false },
+    { id: 23, emoji: '🪷', revealed: false }, 
+    { id: 24, emoji: '🍃', revealed: false }, 
+    { id: 25, emoji: '🪻', revealed: false },
+    { id: 26, emoji: '🌿', revealed: false }, 
+    { id: 27, emoji: '🪻', revealed: false }, 
+    { id: 28, emoji: '🌿', revealed: false }  
+  ];
+
+  cards: { id: number; emoji: string; revealed: boolean }[] = [];
   firstCard: any = null;
   secondCard: any = null;
   matches = 0;
@@ -59,19 +80,26 @@ export class FlowerBoardComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
+      const level = params['level'] || 'hard';
+      this.cards = level === 'easy' ? this.easyCards : this.hardCards;
+      this.maxMoves = level === 'easy' ? 18 : 30;
+      this.shuffleCards();
       this.jogoCronometrado = params['cronometrado'] === 'true';
-      this.iniciarCronometro();
+
+      if (this.jogoCronometrado) {
+        this.iniciarCronometro();
+      }
     });
   }
 
   iniciarCronometro() {
-    this.tempoRestante = 130; // Tempo inicial do cronômetro
+    this.tempoRestante = 130;
     this.cronometroIntervalo = setInterval(() => {
       this.tempoRestante--;
       if (this.tempoRestante <= 0) {
         clearInterval(this.cronometroIntervalo);
         this.gameOver = true;
-        this.endGame(false); // Jogo terminou por tempo esgotado
+        this.endGame(false);
       }
     }, 1000);
   }
@@ -92,7 +120,6 @@ export class FlowerBoardComponent implements OnInit {
     } else if (!this.secondCard) {
       this.secondCard = card;
       this.checkMatch();
-
       this.moves++;
 
       if ((this.moves >= this.maxMoves) && (!this.jogoCronometrado)) {
@@ -178,7 +205,6 @@ export class FlowerBoardComponent implements OnInit {
       }
   
       const particleCount = 200 * (timeLeft / duration);
-      // lanca confetes de varias direções
       confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
       confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
     }, 250);

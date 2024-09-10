@@ -1,59 +1,62 @@
-<div class="free-game">
-    <p >Escolha o tema</p>
-</div>
-<div class="game-selection-container">
-  
+<div class="game-selection-container" *ngIf="showTipeGame">
+    <div class="free-game">
+        <p>Escolha o tema</p>
+    </div>
     <div class="card">
-        <div class="card-content" (click)="showGameBoardAnimals()">
-            <p class="option-game" >Animais</p>
+        <div class="card-content" (click)="selectTheme('animals')">
+            <p class="option-game">Animais</p>
         </div>
     </div>
-
     <div class="card">
-        <div class="card-content" (click)="showGameBoardNegativeNumber()">
-            <p class="option-game" >Comidas</p>
+        <div class="card-content" (click)="selectTheme('emojis-board')">
+            <p class="option-game">Emojis</p>
         </div>
     </div>
-
-    <div class="card" >
-        <div class="card-content" (click)="showGameBoardEmojis()">
-            <p class="option-game" >Emojis</p>
-        </div>
-    </div>
-    
-    <div class="card" >
-        <div class="card-content" (click)="showGameBoardFlower()">
-            <p class="option-game" >Flores</p>
-        </div>
-    </div>
-
     <div class="card">
-        <div class="card-content" (click)="showGameBoardFruit()">
-            <p class="option-game" >Frutas</p>
+        <div class="card-content" (click)="selectTheme('flower-board')">
+            <p class="option-game">Flores e folhas</p>
         </div>
     </div>
-
     <div class="card">
-        <div class="card-content" (click)="showGameBoardHand()">
-            <p class="option-game" >Sinais de mão</p>
+        <div class="card-content" (click)="selectTheme('fruit-board')">
+            <p class="option-game">Futas e legumes</p>
         </div>
     </div>
-
     <div class="card">
-        <div class="card-content" (click)="showGameBoardSymbols()">
-            <p class="option-game" >Símbolos</p>
+        <div class="card-content" (click)="selectTheme('negative-number-board')">
+            <p class="option-game">Refeições</p>
         </div>
     </div>
-
     <div class="card">
-        <div class="card-content" (click)="showGameBoardTrafficSigns()">
-            <p class="option-game" >Placas de trânsito</p>
+        <div class="card-content" (click)="selectTheme('hand-board')">
+            <p class="option-game">Sinais de Mão</p>
         </div>
     </div>
-
-    <div class="card" >
+    <div class="card">
+        <div class="card-content" (click)="selectTheme('symbols')">
+            <p class="option-game">Símbolos</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content" (click)="selectTheme('traffic-signs')">
+            <p class="option-game">Transito</p>
+        </div>
+    </div>
+    <div class="card">
         <div class="card-content" (click)="goBack()">
-            <p class="option-game" >Voltar</p>
+            <p class="option-game">Voltar</p>
         </div>
+    </div>
+</div>
+
+<div class="level-game" *ngIf="showLevelSelection">
+    <div class="level-easy" (click)="escolherNivelFacil()">
+        <p class="level-easy-p">Fácil</p>
+    </div>
+    <div class="level-hard" (click)="escolherNivelDificil()">
+        <p class="level-hard-p">Difícil</p>
+    </div>
+    <div class="level-back" (click)="gameTipo()">
+        <p class="level-back-p">Voltar</p>
     </div>
 </div>

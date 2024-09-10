@@ -1,30 +1,25 @@
-<div>
-  <p class="free-game">Escolha o jogo perfeito para você!</p>
+<div >
+  <div>
+    <p class="free-game">Escolha o jogo perfeito para você!</p>
+  </div>
+  <div class="card">
+    <div class="card-content" (click)="showGameThemes()">
+      <p class="option-game">Jogo livre</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-content" (click)="escolherTemaAleatorio(true)">
+      <p class="option-game">Jogo cronometrado</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-content" (click)="escolherTemaAleatorio(false)">
+      <p class="option-game">Jogo aleatório</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-content" (click)="goBack()">
+      <p class="option-game">Voltar</p>
+    </div>
+  </div>
 </div>
-<div class="game-selection-container">
-
-    <div class="card" >
-      <div class="card-content" (click)="showGameFree()">
-        <p class="option-game" >Jogo livre</p>
-      </div>
-    </div>
-
-    <div class="card" >
-      <div class="card-content" (click)="escolherTemaAleatorio(true)">
-        <p class="option-game">Jogo cronometrado</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-content" (click)="escolherTemaAleatorio(false)">
-        <p class="option-game" >Jogo aleatório</p>
-      </div>
-    </div>
-
-    <div class="card" >
-      <div class="card-content" (click)="goBack()">
-        <p class="option-game" >Voltar</p>
-      </div>
-    </div>
-</div>
-  

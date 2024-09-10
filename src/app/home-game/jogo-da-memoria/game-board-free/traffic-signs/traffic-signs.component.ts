@@ -12,37 +12,57 @@ import confetti from 'canvas-confetti';
 })
 export class TrafficSignsComponent implements OnInit {
 
-  cards = [
-    { id: 1, image: '🚸', revealed: false },  
-    { id: 2, image: '🚳', revealed: false },  
-    { id: 3, image: '📵', revealed: false },  
-    { id: 4, image: '⚠️', revealed: false },  
-    { id: 5, image: '🔞', revealed: false },  
-    { id: 6, image: '🚫', revealed: false },  
-    { id: 7, image: '🚸', revealed: false },  
-    { id: 8, image: '🚳', revealed: false },  
-    { id: 9, image: '📵', revealed: false },  
-    { id: 10, image: '⚠️', revealed: false }, 
-    { id: 11, image: '🔞', revealed: false }, 
-    { id: 12, image: '🚫', revealed: false }, 
-    { id: 13, image: '🚦', revealed: false }, 
-    { id: 14, image: '🚧', revealed: false }, 
-    { id: 15, image: '🚀', revealed: false }, 
-    { id: 16, image: '🛵', revealed: false }, 
-    { id: 17, image: '🚦', revealed: false }, 
-    { id: 18, image: '🚧', revealed: false }, 
-    { id: 19, image: '🚀', revealed: false }, 
-    { id: 20, image: '🛵', revealed: false }, 
-    { id: 21, image: '🚻', revealed: false }, 
-    { id: 22, image: '🅿️', revealed: false },  
-    { id: 23, image: '🚻', revealed: false }, 
-    { id: 24, image: '🅿️', revealed: false },  
-    { id: 25, image: '✈️', revealed: false }, 
-    { id: 26, image: '🚓', revealed: false }, 
-    { id: 27, image: '✈️', revealed: false }, 
-    { id: 28, image: '🚓', revealed: false }  
+  private readonly easyCards = [
+    { id: 1, emoji: '🚳', revealed: false },
+    { id: 2, emoji: '📵', revealed: false },
+    { id: 3, emoji: '🚳', revealed: false },
+    { id: 4, emoji: '📵', revealed: false },
+    { id: 5, emoji: '🚸', revealed: false },
+    { id: 6, emoji: '🚸', revealed: false },
+    { id: 7, emoji: '🔞', revealed: false },
+    { id: 8, emoji: '🔞', revealed: false },
+    { id: 9, emoji: '🚧', revealed: false },
+    { id: 10, emoji: '🚧', revealed: false },
+    { id: 11, emoji: '🚀', revealed: false },
+    { id: 12, emoji: '🚀', revealed: false },
+    { id: 13, emoji: '🚦', revealed: false },
+    { id: 14, emoji: '🚦', revealed: false },
+    { id: 15, emoji: '✈️', revealed: false },
+    { id: 16, emoji: '✈️', revealed: false }
+  ];
+
+  private readonly hardCards = [
+    { id: 1, emoji: '🚸', revealed: false },  
+    { id: 2, emoji: '🚳', revealed: false },  
+    { id: 3, emoji: '📵', revealed: false },  
+    { id: 4, emoji: '⚠️', revealed: false },  
+    { id: 5, emoji: '🔞', revealed: false },  
+    { id: 6, emoji: '🚫', revealed: false },  
+    { id: 7, emoji: '🚸', revealed: false },  
+    { id: 8, emoji: '🚳', revealed: false },  
+    { id: 9, emoji: '📵', revealed: false },  
+    { id: 10, emoji: '⚠️', revealed: false }, 
+    { id: 11, emoji: '🔞', revealed: false }, 
+    { id: 12, emoji: '🚫', revealed: false }, 
+    { id: 13, emoji: '🚦', revealed: false }, 
+    { id: 14, emoji: '🚧', revealed: false }, 
+    { id: 15, emoji: '🚀', revealed: false }, 
+    { id: 16, emoji: '🛵', revealed: false }, 
+    { id: 17, emoji: '🚦', revealed: false }, 
+    { id: 18, emoji: '🚧', revealed: false }, 
+    { id: 19, emoji: '🚀', revealed: false }, 
+    { id: 20, emoji: '🛵', revealed: false }, 
+    { id: 21, emoji: '🚻', revealed: false }, 
+    { id: 22, emoji: '🅿️', revealed: false },  
+    { id: 23, emoji: '🚻', revealed: false }, 
+    { id: 24, emoji: '🅿️', revealed: false },  
+    { id: 25, emoji: '✈️', revealed: false }, 
+    { id: 26, emoji: '🚓', revealed: false }, 
+    { id: 27, emoji: '✈️', revealed: false }, 
+    { id: 28, emoji: '🚓', revealed: false }  
 ];
 
+  cards: { id: number; emoji: string; revealed: boolean }[] = [];
   firstCard: any = null;
   secondCard: any = null;
   matches = 0;
@@ -60,8 +80,15 @@ export class TrafficSignsComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
+      const level = params['level'] || 'hard';
+      this.cards = level === 'easy' ? this.easyCards : this.hardCards;
+      this.maxMoves = level === 'easy' ? 18 : 30;
+      this.shuffleCards();
       this.jogoCronometrado = params['cronometrado'] === 'true';
-      this.iniciarCronometro();
+      
+      if (this.jogoCronometrado) {
+        this.iniciarCronometro();
+      }
     });
   }
 
@@ -111,7 +138,7 @@ export class TrafficSignsComponent implements OnInit {
   }
 
   checkMatch() {
-    if (this.firstCard.image === this.secondCard.image) {
+    if (this.firstCard.emoji === this.secondCard.emoji) {
       this.matches++;
       this.resetSelection();
 
