@@ -1,34 +1,57 @@
+<div (click)="homeOptionGame()" *ngIf="showOptionsGame" >
+    <div>
+      <p class="free-game">Escolha o jogo perfeito para você!</p>
+    </div>
+    <div class="card">
+      <div class="card-content" >
+        <p class="option-game">Jogo aleatório</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content" (click)="homeConometroGame()">
+        <p class="option-game">Jogo cronometrado</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content" (click)="homeLevelGame()">
+        <p class="option-game">Níveis</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content" (click)="goBack()">
+        <p class="option-game">Voltar</p>
+      </div>
+    </div>
+</div>
+  
 
-<div class="option" (click)="homeOptionGame()" *ngIf="showOptionsGame" >
-    <div class="image-container">
-        <img class="img-niveis" (click)="homeLevelGame()" src="/assets/outros/circulo-roxo.png">
-        <span class="text-overlay">Nível</span>
+<div (click)="homeLevelGame()" *ngIf="showLevelGame" >
+    <div>
+      <p class="free-game">Escolha o jogo perfeito para você!</p>
     </div>
-    <div class="image-container">
-        <img class="img-cronometro" (click)="homeConometroGame()" src="/assets/outros/circulo-roxo.png">
-        <span class="text-overlay">Jogo<br>cronometrado</span>
+    <div class="card">
+      <div class="card-content" (click)="homeNameGameEasy()">
+        <p class="option-game">Nível Fácil</p>
+      </div>
     </div>
-    <div class="image-container">
-        <img class="img-voltar" (click)="goBack()" src="assets/outros/img-voltar.png">
-        <span class="text-option"></span>
+    <div class="card">
+      <div class="card-content" (click)="homeNameGameAverage()">
+        <p class="option-game">Nível Médio</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content" (click)="homeNameGameHard()">
+        <p class="option-game">Nível Difícil</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content" (click)="goBack()">
+        <p class="option-game">Voltar</p>
+      </div>
     </div>
 </div>
 
-<div class="level" (click)="homeLevelGame()" *ngIf="showLevelGame" >
-    <h2 class="niveis">Dificuldade</h2>
-    <div class="image-container" (click)="homeNameGameEasy()">
-        <img class="nivel-facil" src="/assets/outros/circulo-roxo.png">
-        <span class="text-overlay">Fácil</span>
-    </div>
-    <div class="image-container" (click)="homeNameGameAverage()">
-        <img class="nivel-medio" src="/assets/outros/circulo-roxo.png">
-        <span class="text-overlay">Médio</span>
-    </div>
-    <div class="image-container" (click)="homeNameGameHard()">
-        <img class="nivel-dificil" src="/assets/outros/circulo-roxo.png">
-        <span class="text-overlay">Difícil</span>
-    </div>
-</div>
+
 
 <div class="cronometrado" (click)="homeConometroGame()" *ngIf="showConometroGame" >
     <p class="">Jogo<br>cronometrado</p>

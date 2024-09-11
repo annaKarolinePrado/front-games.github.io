@@ -1,3 +1,22 @@
+.free-game {
+    color: #ff0066;
+    text-shadow: 0 0 10px #ff0066;
+    text-align: center;
+}
+
+.card {
+    width: 40%;
+    margin-left: 30%;
+    font-size: 1em;   
+    color: #fff;
+    background-color: var(--menu-color);
+    box-shadow: 0 0 5px #ff0066, 0 0 10px #ff0066, 0 0 20px #ff0066;
+    text-shadow: 0 0 15px #ff0066;
+    border: 2px solid #ff0066; 
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 .name-player {
     margin-bottom: 7%;
     margin-top: 7%;
@@ -57,15 +76,10 @@ button:hover {
     margin-top: 15%;
 }
 
-.option-game {
-    padding: 8%;
-    text-align: center;
-    font-size: 1.3em;
-    text-shadow: 0 0 5px #6600cc, 0 0 10px #6600cc, 0 0 30px #6600cc;
-}
+
 
 .niveis {
-    font-size: 1.5em;
+    font-size: 1em;
     color: #8000ff;
     font-weight: bold;
     text-shadow: 0 0 5px black, 0 0 10px black;
@@ -87,7 +101,7 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: bold;
     pointer-events: none;
     text-shadow: 0 0 5px #330066, 0 0 10px #330066, 0 0 30px #330066;
@@ -96,7 +110,7 @@ button:hover {
 .text-option {
     width: 100%;
     left: 50%;
-    font-size: 1.3em;
+    font-size: 1em;
     color: #8000ff;
 }
 
@@ -107,7 +121,7 @@ button:hover {
 
     .niveis {
         font-size: 1.5em;
-        color: #8000ff;
+        color: #ff0066;
         font-weight: bold;
         text-shadow: 0 0 5px black, 0 0 10px black;
     }
@@ -128,7 +142,7 @@ button:hover {
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
-        font-size: 1.1em;
+        font-size: 1em;
         font-weight: bold;
         pointer-events: none;
         text-shadow: 0 0 5px #330066, 0 0 10px #330066, 0 0 30px #330066;
@@ -137,7 +151,13 @@ button:hover {
     .text-option {
         width: 100%;
         left: 50%;
-        font-size: 1.3em;
-        color: #8000ff;
+        color: #ff0066;
+    }
+
+    .card {
+        width: 70%;
+        height: 10%;
+        margin-left: 15%;
+        margin-bottom: 10%;
     }
 }

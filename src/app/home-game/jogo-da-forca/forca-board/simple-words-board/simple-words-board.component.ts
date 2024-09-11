@@ -69,7 +69,7 @@ export class SimpleWordsBoardComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
-      const nivel = params['nivel'];  // Aqui você captura o nível da URL
+      const nivel = params['nivel'];
       this.iniciarJogoAleatorio(nivel);
     });
   }
@@ -117,8 +117,7 @@ export class SimpleWordsBoardComponent {
       palavras = palavras.filter(palavra => palavra.length > 5 && palavra.length <= 10);
     } else if (nivel === 'dificil') {
       palavras = palavras.filter(palavra => palavra.length > 10);
-    } 
-    else if (nivel === 'aleatorio') {
+    } else if (nivel === 'aleatorio') {
       palavras = temas[tema];
     }
   
