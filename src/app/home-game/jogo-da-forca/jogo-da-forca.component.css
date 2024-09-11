@@ -37,9 +37,7 @@
     font-size: 1em;
     text-align: center;
 }
-.option-game {
-    font-size: 1.3em;
-}
+
   
 @media (max-width: 765px) {
     .free-game {

@@ -46,9 +46,9 @@
     <div class="mensagem-fim-overlay" *ngIf="gameFinished">
         <div class="mensagem-fim-modal">
             <div class="mensagem">
-                <p class="emoji-fim" *ngIf="venceu">😄</p>
+                <p class="emoji-fim" *ngIf="venceu">😎</p>
                 <p class="mensagem-fim" *ngIf="venceu">Parabéns... <br> Você acertou a palavra!</p>
-                <p class="emoji-fim" *ngIf="!venceu && vidasRestantes === 0">😢</p>
+                <p class="emoji-fim" *ngIf="!venceu && vidasRestantes === 0">🫣</p>
                 <p class="mensagem-fim" *ngIf="vidasRestantes === 0">Você perdeu!<br> A palavra era:<br> {{ palavraSecreta }}</p>
             </div>
             <button class="btn-mensagem-fim" (click)="iniciarJogo()">Jogar Novamente</button>

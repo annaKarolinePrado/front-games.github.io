@@ -3,32 +3,32 @@
 </div>
 <div class="game-selection-container">
     <div class="card">
-        <div class="card-content" (click)="showGameAleatorio()">
-            <p class="option-game" >Aleatório</p>
+        <div class="card-content" (click)="showGameAleatorio('aleatorio')">
+            <p class="option-game">Aleatório</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content" (click)="showGameAleatorio('facil')">
+            <p class="option-game">Nível Fácil</p>
         </div>
     </div>
   
     <div class="card">
-        <div class="card-content">
-            <p class="option-game">Fácil</p>
+        <div class="card-content" (click)="showGameAleatorio('medio')">
+            <p class="option-game">Nível Médio</p>
         </div>
     </div>
-  
+
     <div class="card">
-        <div class="card-content">
-            <p class="option-game">Médio</p>
+        <div class="card-content" (click)="showGameAleatorio('dificil')">
+            <p class="option-game">Nível Difícil</p>
         </div>
     </div>
-  
-    <div class="card">
-        <div class="card-content">
-            <p class="option-game">Difícil</p>
-        </div>
-    </div>
-  
+
     <div class="card">
         <div class="card-content" (click)="goBack()">
-            <p class="option-game" >Voltar</p>
+            <p class="option-game">Voltar</p>
         </div>
     </div>
 </div>
