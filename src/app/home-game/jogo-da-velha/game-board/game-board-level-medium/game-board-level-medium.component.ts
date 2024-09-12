@@ -23,7 +23,7 @@ export class GameBoardLevelMediumComponent {
     if (state) {
       this.player1 = state['player1'];
       this.player2 = state['player2'];
-      this.currentPlayer = this.player1; // Começa com o Jogador 1
+      this.currentPlayer = this.player1;
     }
   }
 
@@ -37,24 +37,28 @@ export class GameBoardLevelMediumComponent {
 
   checkWinner(): void {
     const winningCombinations = [
-      [[0, 0], [0, 1], [0, 2], [0, 3]],
-      [[1, 0], [1, 1], [1, 2], [1, 3]],
-      [[2, 0], [2, 1], [2, 2], [2, 3]],
-      [[3, 0], [3, 1], [3, 2], [3, 3]],
-      [[0, 0], [1, 0], [2, 0], [3, 0]],
-      [[0, 1], [1, 1], [2, 1], [3, 1]],
-      [[0, 2], [1, 2], [2, 2], [3, 2]],
-      [[0, 3], [1, 3], [2, 3], [3, 3]],
-      [[0, 0], [1, 1], [2, 2], [3, 3]],
-      [[0, 3], [1, 2], [2, 1], [3, 0]],
+      [[0, 0], [0, 1], [0, 2]], [[0, 1], [0, 2], [0, 3]],
+      [[1, 0], [1, 1], [1, 2]], [[1, 1], [1, 2], [1, 3]],
+      [[2, 0], [2, 1], [2, 2]], [[2, 1], [2, 2], [2, 3]],
+      [[3, 0], [3, 1], [3, 2]], [[3, 1], [3, 2], [3, 3]],
+
+      [[0, 0], [1, 0], [2, 0]], [[1, 0], [2, 0], [3, 0]],
+      [[0, 1], [1, 1], [2, 1]], [[1, 1], [2, 1], [3, 1]],
+      [[0, 2], [1, 2], [2, 2]], [[1, 2], [2, 2], [3, 2]],
+      [[0, 3], [1, 3], [2, 3]], [[1, 3], [2, 3], [3, 3]],
+
+      [[0, 0], [1, 1], [2, 2]], [[1, 1], [2, 2], [3, 3]],
+      [[0, 1], [1, 2], [2, 3]], [[1, 0], [2, 1], [3, 2]],
+
+      [[0, 2], [1, 1], [2, 0]], [[0, 3], [1, 2], [2, 1]],
+      [[1, 3], [2, 2], [3, 1]], [[1, 2], [2, 1], [3, 0]],
     ];
 
     for (const combination of winningCombinations) {
-      const [a, b, c, d] = combination;
+      const [a, b, c] = combination;
       if (this.board[a[0]][a[1]] && 
         this.board[a[0]][a[1]] === this.board[b[0]][b[1]] && 
-        this.board[a[0]][a[1]] === this.board[c[0]][c[1]] && 
-        this.board[a[0]][a[1]] === this.board[d[0]][d[1]]) {
+        this.board[a[0]][a[1]] === this.board[c[0]][c[1]]) {
 
         this.winner = this.currentPlayer;
         this.gameOver = true;
