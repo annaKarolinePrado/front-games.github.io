@@ -101,8 +101,9 @@
   }
 
   .welcome-message {
-      font-size: 1em;
+      font-size: 1.1em;
       margin-bottom: -11%;
+      text-shadow: 0 0 5px #9900cc, 0 0 10px #9900cc, 0 0 15px #9900cc, 0 0 20px #9900cc;
   }
 
   main {
