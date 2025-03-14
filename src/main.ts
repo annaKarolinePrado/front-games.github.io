@@ -23,6 +23,7 @@ import { GameBoardLevelMediumComponent } from './app/home-game/jogo-da-velha/gam
 import { GameBoardLevelEasyComponent } from   './app/home-game/jogo-da-velha/game-board/game-board-level-easy/game-board-level-easy.component';
 import { JogoDaForcaComponent } from          './app/home-game/jogo-da-forca/jogo-da-forca.component';
 import { SimpleWordsBoardComponent } from     './app/home-game/jogo-da-forca/forca-board/simple-words-board/simple-words-board.component';
+import { GameBoardTimedComponent } from './app/home-game/jogo-da-velha/game-board/game-board-timed/game-board-timed.component';
 
 const routes: Routes = [
   { path: '', component: HomeGameComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },  
   { path: 'home-game/jogo-da-velha', component: JogoDaVelhaComponent },
+  { path: 'home-game/jogo-da-velha/game-board/game-board-timed/game-board-timed.component', component: GameBoardTimedComponent },
   { path: 'home-game/jogo-da-velha/game-board/game-board-level-easy/game-board-level-easy.component', component: GameBoardLevelEasyComponent },
   { path: 'home-game/jogo-da-velha/game-board/game-board-level-medium/game-board-level-medium.component', component: GameBoardLevelMediumComponent },
   { path: 'home-game/jogo-da-memoria', component: JogoDaMemoriaComponent },

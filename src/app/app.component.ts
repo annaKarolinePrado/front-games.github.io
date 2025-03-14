@@ -20,6 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { SignupComponent } from './signup/signup.component';
+import { GameBoardTimedComponent } from './home-game/jogo-da-velha/game-board/game-board-timed/game-board-timed.component';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,7 @@ import { SignupComponent } from './signup/signup.component';
             SignupComponent, 
             HomeGameComponent, 
             JogoDaVelhaComponent,
+            GameBoardTimedComponent,
             GameBoardLevelEasyComponent,
             GameBoardLevelMediumComponent,
             JogoDaMemoriaComponent,
